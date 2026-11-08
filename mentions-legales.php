@@ -34,7 +34,7 @@
             <strong>Forme juridique :</strong> SARL<br>
             <strong>Adresse :</strong> 12 rue des gourmets, 33000 Bordeaux<br>
             <strong>Téléphone :</strong> 05 00 00 00 00<br>
-            <strong>Adresse e-mail :</strong> contact.vitegourmand1@gmail.com
+            <strong>Adresse e-mail :</strong> contact.vitegourmand1@gmail.com <br>
             <strong>Numéro SIRET :</strong> Non applicable – entreprise fictive créée pour le projet ECF<br>
         </p>
 
