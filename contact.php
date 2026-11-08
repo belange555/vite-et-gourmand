@@ -153,6 +153,13 @@ if (empty($erreurs)) {
 
             </form>
 
+            <p class="information-rgpd">
+    Les informations transmises sont utilisées uniquement
+    pour répondre à votre demande. Pour en savoir plus,
+    consultez nos <a href="mentions-legales.php">mentions légales
+    et notre politique de confidentialité</a>.
+</p>
+
         <?php endif; ?>
 
     </section>
