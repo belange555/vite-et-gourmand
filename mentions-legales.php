@@ -93,7 +93,7 @@
     Pour exercer ses droits ou poser une question concernant
     ses données personnelles, l'utilisateur peut contacter
     Vite & Gourmand à l'adresse :
-    <strong>contact.viteetgourmand@gmail.com</strong>.
+    <strong>contact.vitegourmand1@gmail.com</strong>.
 </p>
 
         <h3>Cookies</h3>
