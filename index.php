@@ -67,6 +67,8 @@ $avisClients = $requeteAvis->fetchAll(PDO::FETCH_ASSOC);
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <head>
+    <meta name="google-site-verification" content="SgXJpX9Qx-sVOaARZ5_YxnUnEf2iHgNrUbvt_Ty6i4Y" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vite & Gourmand</title>
