@@ -1,0 +1,11 @@
+
+{
+    "name": "vite-et-gourmand/site",
+    "description": "Site web du traiteur Vite & Gourmand",
+    "type": "project",
+    "require": {
+        "php": "^8.2",
+        "ext-pdo": "*",
+        "ext-pdo_mysql": "*"
+    }
+}

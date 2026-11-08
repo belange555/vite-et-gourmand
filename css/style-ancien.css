@@ -1,0 +1,2225 @@
+/* 1. Couleurs du site */
+:root {
+    --couleur-principale: #2F5D50;
+    --couleur-fond: #F5F5F5;
+    --couleur-section: #E8F0EC;
+    --couleur-carte: #FFFFFF;
+}
+
+/* 2. Mise en forme générale */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--couleur-fond);
+    color: #333333;
+    line-height: 1.6;
+}
+
+/* Contenu principal */
+.contenu-principal {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+/* Cartes des menus */
+.carte-menu {
+    background-color: var(--couleur-carte);
+    border-radius: 14px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: 100%;
+}
+
+.carte-menu:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
+}
+
+/* En-tête du site */
+.site-header {
+    background-color: var(--couleur-principale);
+    color: var(--couleur-carte);
+    padding: 24px;
+}
+
+.site-header h1 {
+    max-width: none;
+    margin: 0;
+}
+
+/* Boutons du site */
+.bouton {
+    display: inline-block;
+    background-color: var(--couleur-principale);
+    color: var(--couleur-carte);
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.bouton:hover {
+    background-color: #24483E;
+}
+
+/* Titres */
+.contenu-principal > h2 {
+    color: var(--couleur-principale);
+    margin-bottom: 24px;
+}
+
+.carte-menu h3 {
+    color: var(--couleur-principale);
+    font-size: 1.35rem;
+    margin-top: 0;
+}
+
+/* Prix du menu */
+.carte-menu p strong {
+    color: var(--couleur-principale);
+}
+
+/* Composition du menu */
+.carte-menu h4 {
+    margin-bottom: 8px;
+}
+
+.carte-menu ul {
+    padding-left: 24px;
+}
+
+/* Prix du menu */
+.prix-menu span {
+    color: var(--couleur-principale);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Composition du menu */
+.carte-menu h4 {
+    color: var(--couleur-principale);
+    font-size: 1rem;
+    margin-top: 24px;
+    margin-bottom: 10px;
+}
+
+.carte-menu ul {
+    background-color: var(--couleur-section);
+    padding: 16px 16px 16px 36px;
+    border-radius: 8px;
+    margin-bottom: 0;
+}
+
+.carte-menu li {
+    margin-bottom: 6px;
+}
+
+.carte-menu li:last-child {
+    margin-bottom: 0;
+}
+
+/* Grille des menus */
+.grille-menus {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    align-items: stretch;
+}
+
+/* Cartes des menus */
+.carte-menu {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    background-color: var(--couleur-carte);
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 0;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.carte-menu:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
+}
+
+/* Grille des menus */
+.grille-menus {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    align-items: stretch;
+}
+
+/* Tablettes : 2 cartes par ligne */
+@media (max-width: 900px) {
+    .grille-menus {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Téléphones : 1 carte par ligne */
+@media (max-width: 600px) {
+    .grille-menus {
+        grid-template-columns: 1fr;
+    }
+}
+/* Image des cartes de menus */
+.image-menu {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 12px 0 16px;
+}
+
+/* Image plus grande sur la page détaillée */
+.carte-menu .image-menu {
+    max-height: 450px;
+}
+
+/* Espacement des informations sur la page détail */
+.titre-menu {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.carte-menu > p {
+    margin: 12px 0;
+}
+
+.carte-menu > .image-menu {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.carte-menu > h2:not(.titre-menu) {
+    margin-top: 28px;
+    margin-bottom: 16px;
+}
+
+/* Formulaire de connexion */
+.champ-formulaire {
+    margin-bottom: 18px;
+}
+
+.champ-formulaire label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: var(--couleur-principale);
+}
+
+.champ-formulaire input {
+    width: 100%;
+    max-width: 420px;
+    padding: 10px 12px;
+    border: 1px solid #CCCCCC;
+    border-radius: 6px;
+    font: inherit;
+}
+
+.champ-formulaire input:focus {
+    outline: 2px solid var(--couleur-principale);
+    outline-offset: 2px;
+}
+
+/* Espace utilisateur */
+.espace-utilisateur {
+    display: grid;
+    grid-template-columns: 230px minmax(0, 1fr);
+    gap: 24px;
+    align-items: start;
+    margin-top: 24px;
+}
+
+/* Menu latéral */
+.menu-utilisateur {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background-color: var(--couleur-carte);
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+/* Liens du menu */
+.lien-utilisateur {
+    display: block;
+    padding: 12px;
+    color: #333333;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.lien-utilisateur:hover,
+.lien-utilisateur.actif {
+    background-color: var(--couleur-section);
+    color: var(--couleur-principale);
+}
+
+/* Contenu à droite */
+.contenu-utilisateur {
+    background-color: var(--couleur-carte);
+    padding: 24px;
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+.contenu-utilisateur h3 {
+    margin-top: 0;
+    color: var(--couleur-principale);
+}
+
+/* Affichage sur téléphone */
+@media (max-width: 700px) {
+    .espace-utilisateur {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* En-tête de l'espace utilisateur */
+.entete-utilisateur {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.profil-utilisateur {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.profil-utilisateur a {
+    color: var(--couleur-carte);
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .entete-utilisateur {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* ================================
+   ESPACE ADMINISTRATEUR
+================================ */
+
+.page-administrateur {
+    background-color: #F5F5F5;
+    color: #333333;
+    font-family: Arial, sans-serif;
+}
+
+/* Bandeau vert */
+.page-administrateur header {
+    background-color: #2F5D50;
+    color: #FFFFFF;
+    padding: 25px 0;
+}
+
+.page-administrateur header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.page-administrateur header p {
+    margin: 8px 0 0;
+    color: #E8F0EC;
+}
+
+/* Contenu principal */
+.page-administrateur main.container {
+    width: 92%;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding-top: 25px;
+}
+
+/* Section */
+.page-administrateur .section {
+    background-color: #E8F0EC;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.page-administrateur .section h2 {
+    color: #2F5D50;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+/* Cartes de commandes */
+.page-administrateur .commande-admin {
+    background-color: #FFFFFF;
+    border: 1px solid #E0E7E3;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 22px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+}
+
+.page-administrateur .commande-admin h3 {
+    color: #2F5D50;
+    margin-top: 0;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #E8F0EC;
+}
+
+.page-administrateur .commande-admin p {
+    line-height: 1.6;
+    margin: 8px 0;
+}
+
+.page-administrateur .commande-admin strong {
+    color: #2F5D50;
+}
+
+.page-administrateur .commande-admin hr {
+    border: 0;
+    border-top: 1px solid #E8F0EC;
+    margin: 22px 0;
+}
+
+/* Formulaires */
+.page-administrateur .form-action-admin {
+    margin-top: 18px;
+}
+
+.page-administrateur .form-action-admin label {
+    display: block;
+    color: #2F5D50;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.page-administrateur .form-action-admin textarea {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #C8D5CE;
+    border-radius: 8px;
+    font: inherit;
+    margin-bottom: 12px;
+    resize: vertical;
+}
+
+.page-administrateur .form-action-admin textarea:focus {
+    outline: 2px solid #2F5D50;
+    border-color: #2F5D50;
+}
+
+/* Boutons */
+.page-administrateur .form-action-admin .btn {
+    background-color: #2F5D50;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 7px;
+    padding: 11px 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.page-administrateur .form-action-admin .btn:hover {
+    background-color: #24483E;
+}
+
+.page-administrateur .form-action-admin .btn-danger {
+    background-color: #A33D3D;
+}
+
+.page-administrateur .form-action-admin .btn-danger:hover {
+    background-color: #812D2D;
+}
+
+/* Messages */
+.page-administrateur .message {
+    padding: 14px 18px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.page-administrateur .message.succes {
+    background-color: #E2F2E7;
+    color: #245B36;
+}
+
+.page-administrateur .message.erreur {
+    background-color: #FBE8E8;
+    color: #8A2525;
+}
+
+/* Lien retour */
+.page-administrateur main.container > p a {
+    color: #2F5D50;
+    font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .page-administrateur main.container {
+        width: 94%;
+        margin: 18px auto;
+    }
+
+    .page-administrateur .section {
+        padding: 15px;
+    }
+
+    .page-administrateur .commande-admin {
+        padding: 16px;
+    }
+
+    .page-administrateur header h1 {
+        font-size: 23px;
+    }
+
+    .page-administrateur .form-action-admin .btn {
+        width: 100%;
+    }
+}
+
+/* Image sur la page détail d'un menu */
+.image-menu-detail {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+    margin: 16px 0 24px;
+}
+
+/* Composition du menu */
+.composition-menu {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0 24px;
+}
+
+.composition-menu li {
+    background-color: var(--couleur-section);
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    line-height: 1.6;
+}
+
+.allergenes-menu {
+    margin: 8px 0 0;
+    font-size: 0.9rem;
+}
+
+.message-composition {
+    background-color: var(--couleur-section);
+    padding: 16px;
+    border-radius: 8px;
+    color: #555;
+}
+
+/* Adaptation téléphone */
+@media (max-width: 600px) {
+    .image-menu-detail {
+        height: 220px;
+    }
+}
+
+/* Composition du menu */
+.titre-composition {
+    margin-top: 32px;
+    margin-bottom: 18px;
+}
+
+.composition-menu {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+}
+
+.bloc-composition {
+    background-color: var(--couleur-section);
+    border-radius: 10px;
+    padding: 18px;
+}
+
+.bloc-composition h3 {
+    color: var(--couleur-principale);
+    margin-top: 0;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(47, 93, 80, 0.2);
+}
+
+.detail-plat h4 {
+    margin: 0 0 8px;
+    color: #333;
+}
+
+.detail-plat p {
+    margin: 6px 0 12px;
+    line-height: 1.5;
+}
+
+.detail-plat .allergenes {
+    font-size: 0.9rem;
+    color: #6b4b2a;
+}
+
+.composition-indisponible {
+    background-color: var(--couleur-section);
+    padding: 16px;
+    border-radius: 8px;
+}
+
+/* Adaptation aux écrans plus petits */
+@media (max-width: 750px) {
+    .composition-menu {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ================================
+   GESTION DES MENUS - ADMIN
+================================ */
+
+.page-gestion-menus {
+    background-color: var(--couleur-fond);
+    color: #333333;
+    font-family: Arial, sans-serif;
+}
+
+/* Bandeau vert */
+.page-gestion-menus header {
+    background-color: var(--couleur-principale);
+    color: white;
+    padding: 24px;
+}
+
+.page-gestion-menus header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.page-gestion-menus header p {
+    margin: 8px 0 0;
+}
+
+/* Contenu principal */
+.page-gestion-menus main.container {
+    width: 92%;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+/* Section contenant les menus */
+.page-gestion-menus .section {
+    background-color: var(--couleur-section);
+    padding: 24px;
+    border-radius: 12px;
+}
+
+/* En-tête de la section */
+.page-gestion-menus .entete-gestion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.page-gestion-menus .entete-gestion h2 {
+    color: var(--couleur-principale);
+    margin: 0;
+}
+
+/* Grille des cartes */
+.page-gestion-menus .grille-menus-admin {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+/* Carte d'un menu */
+.page-gestion-menus .menu-admin {
+    min-width: 0;
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Titre de la carte */
+.page-gestion-menus .menu-admin h3 {
+    color: var(--couleur-principale);
+    margin-top: 0;
+}
+
+/* Image du menu dans la gestion */
+.page-gestion-menus .menu-admin .image-menu-admin {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: 220px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px;
+    margin: 10px 0 16px;
+}
+
+/* Informations */
+.page-gestion-menus .menu-admin p {
+    margin: 8px 0;
+    overflow-wrap: anywhere;
+}
+
+.page-gestion-menus .menu-admin strong {
+    color: var(--couleur-principale);
+}
+
+/* Bouton Modifier */
+.page-gestion-menus .menu-admin .btn {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+/* Responsive tablette */
+@media (max-width: 900px) {
+    .page-gestion-menus .grille-menus-admin {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Responsive téléphone */
+@media (max-width: 600px) {
+    .page-gestion-menus main.container {
+        width: 94%;
+        margin: 18px auto;
+    }
+
+    .page-gestion-menus .section {
+        padding: 16px;
+    }
+
+    .page-gestion-menus .grille-menus-admin {
+        grid-template-columns: 1fr;
+    }
+
+    .page-gestion-menus .entete-gestion {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .page-gestion-menus .image-menu-admin {
+        height: 220px;
+    }
+}
+
+/* Formulaire de modification d'un menu */
+.page-gestion-menus .formulaire-menu {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 32px;
+}
+
+.page-gestion-menus .formulaire-menu form {
+    width: 100%;
+}
+
+.page-gestion-menus .formulaire-menu .champ-formulaire {
+    margin-bottom: 20px;
+}
+
+.page-gestion-menus .formulaire-menu input,
+.page-gestion-menus .formulaire-menu textarea,
+.page-gestion-menus .formulaire-menu select {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    padding: 12px;
+    border: 1px solid #C8D5CE;
+    border-radius: 6px;
+    font: inherit;
+    background-color: #FFFFFF;
+}
+
+.page-gestion-menus .formulaire-menu textarea {
+    resize: vertical;
+}
+
+.page-gestion-menus .formulaire-menu h2 {
+    color: var(--couleur-principale);
+    margin-top: 28px;
+}
+
+.page-gestion-menus .formulaire-menu p {
+    margin-bottom: 20px;
+}
+
+.page-gestion-menus .formulaire-menu .btn {
+    margin-top: 12px;
+}
+
+@media (max-width: 600px) {
+    .page-gestion-menus .formulaire-menu {
+        padding: 18px;
+    }
+}
+
+/* =====================================
+   PAGE D'ACCUEIL - VITE & GOURMAND
+===================================== */
+
+/* En-tête et navigation */
+.entete-accueil {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.navigation-principale {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+}
+
+.navigation-principale a {
+    color: var(--couleur-carte);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.navigation-principale a:hover {
+    text-decoration: underline;
+}
+
+.navigation-principale .bouton {
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+/* Contenu de la page d'accueil */
+.section-accueil {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 48px;
+    padding: 24px 0 56px;
+}
+
+.texte-accueil h2 {
+    color: var(--couleur-principale);
+    font-size: 2rem;
+    line-height: 1.25;
+    margin: 0 0 24px;
+}
+
+.texte-accueil p {
+    font-size: 1.1rem;
+    margin-bottom: 60px;
+}
+
+.texte-accueil .bouton {
+    display: inline-block;
+    min-width: 190px;
+    text-align: center;
+    padding: 14px 24px;
+}
+
+/* Image principale */
+.image-accueil img {
+    display: block;
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Section des menus */
+.section-nos-menus {
+    padding-top: 8px;
+}
+
+.section-nos-menus > h2 {
+    color: #111111;
+    margin-bottom: 18px;
+}
+
+/* Cartes de la page d'accueil */
+.section-nos-menus .carte-menu {
+    padding: 0;
+    overflow: hidden;
+}
+
+.section-nos-menus .image-menu {
+    height: 150px;
+    margin: 0;
+    border-radius: 0;
+}
+
+.contenu-carte-menu {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 14px;
+}
+
+.contenu-carte-menu h3 {
+    font-size: 1rem;
+    margin: 0 0 8px;
+    color: #111111;
+}
+
+.description-menu {
+    color: #777777;
+    font-size: 0.9rem;
+    line-height: 1.35;
+    margin: 0 0 12px;
+}
+
+.informations-menu {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 0 0 14px;
+}
+
+.bouton-details {
+    align-self: center;
+    min-width: 90px;
+    text-align: center;
+    padding: 8px 16px;
+    margin-top: auto;
+}
+
+/* Adaptation tablette */
+@media (max-width: 900px) {
+    .entete-accueil {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navigation-principale {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .section-accueil {
+        gap: 24px;
+    }
+
+    .texte-accueil h2 {
+        font-size: 1.6rem;
+    }
+}
+
+/* Adaptation téléphone */
+@media (max-width: 600px) {
+    .section-accueil {
+        grid-template-columns: 1fr;
+        padding: 24px 0 40px;
+    }
+
+    .texte-accueil p {
+        margin-bottom: 24px;
+    }
+
+    .image-accueil img {
+        height: 220px;
+    }
+
+    .navigation-principale {
+        gap: 14px;
+    }
+}
+
+/* Bouton de suppression d'un menu */
+.page-gestion-menus .formulaire-menu .btn-danger {
+    background-color: #A33D3D;
+    margin-top: 16px;
+}
+
+.page-gestion-menus .formulaire-menu .btn-danger:hover {
+    background-color: #812D2D;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#nos-menus {
+    scroll-margin-top: 30px;
+}
+
+/* Filtres de la page Nos menus */
+.filtres-menus {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin: 25px 0;
+}
+
+.filtres-menus select,
+.filtres-menus input[type="search"] {
+    min-height: 40px;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+    font-size: 14px;
+}
+
+.filtres-menus select {
+    min-width: 170px;
+}
+
+.filtres-menus input[type="search"] {
+    width: 240px;
+}
+
+.filtres-menus .bouton {
+    min-height: 40px;
+    padding: 10px 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+/* Affichage sur mobile */
+@media (max-width: 600px) {
+    .filtres-menus {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filtres-menus select,
+    .filtres-menus input[type="search"],
+    .filtres-menus .bouton {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+/* Page Contact */
+.section-contact {
+    background-color: #E8F0EC;
+    padding: 30px 40px 45px;
+    border-radius: 8px;
+}
+
+.section-contact h2 {
+    color: #2F5D50;
+    margin-bottom: 20px;
+}
+
+.section-contact > p {
+    margin-bottom: 40px;
+}
+
+.formulaire-contact {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 35px 15px;
+    background-color: #FFFFFF;
+    border-radius: 12px;
+}
+
+.champ-formulaire {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.champ-formulaire label {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.champ-formulaire input,
+.champ-formulaire select,
+.champ-formulaire textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #D5D5D5;
+    border-radius: 6px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.champ-formulaire textarea {
+    resize: vertical;
+}
+
+.formulaire-contact button {
+    display: block;
+    width: 50%;
+    margin: 25px auto 0;
+}
+
+.message-succes {
+    max-width: 650px;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #FFFFFF;
+    color: #2F5D50;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.message-erreur {
+    max-width: 650px;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #FFFFFF;
+    color: #B00020;
+    border-radius: 8px;
+}
+
+/* Adaptation mobile */
+@media (max-width: 600px) {
+    .section-contact {
+        padding: 25px 15px;
+    }
+
+    .formulaire-contact {
+        padding: 25px 15px;
+    }
+
+    .formulaire-contact button {
+        width: 100%;
+    }
+}
+/* Page Contact */
+.section-contact {
+    background-color: #E8F0EC;
+    padding: 40px 5%;
+    min-height: 600px;
+}
+
+.section-contact h2 {
+    color: #2F5D50;
+    margin-bottom: 20px;
+}
+
+.section-contact > p {
+    margin-bottom: 40px;
+}
+
+.formulaire-contact {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.formulaire-contact label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.formulaire-contact input,
+.formulaire-contact select,
+.formulaire-contact textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #D0D0D0;
+    border-radius: 6px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.formulaire-contact textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.formulaire-contact button {
+    display: block;
+    width: 250px;
+    margin: 10px auto 0;
+}
+
+/* Page Contact */
+.section-contact {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 40px 50px;
+    background-color: #E8F0EC;
+    border-radius: 12px;
+}
+
+.section-contact h2 {
+    color: #2F5D50;
+    margin-bottom: 15px;
+}
+
+.formulaire-contact {
+    max-width: 650px;
+    margin: 60px auto 0;
+    padding: 30px;
+    background-color: #FFFFFF;
+    border-radius: 12px;
+}
+
+.champ-formulaire {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.champ-formulaire label {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.champ-formulaire input,
+.champ-formulaire select,
+.champ-formulaire textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #D5D5D5;
+    border-radius: 6px;
+    font: inherit;
+    box-sizing: border-box;
+}
+
+.champ-formulaire textarea {
+    resize: vertical;
+}
+
+.formulaire-contact button {
+    display: block;
+    width: 45%;
+    min-width: 220px;
+}
+
+/* Adaptation mobile */
+@media (max-width: 600px) {
+    .section-contact {
+        margin: 20px 10px;
+        padding: 25px 15px;
+    }
+
+    .formulaire-contact {
+        margin-top: 30px;
+        padding: 20px 15px;
+    }
+
+    .formulaire-contact button {
+        width: 100%;
+    }
+}
+
+.champ-formulaire input[type="email"] {
+    width: 100%;
+}
+
+/* Statistiques du tableau de bord utilisateur */
+.statistiques-utilisateur {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.carte-statistique {
+    background-color: #E8F0EC;
+    border-radius: 10px;
+    padding: 18px;
+    text-align: center;
+}
+
+.carte-statistique h4 {
+    color: #2F5D50;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.carte-statistique p {
+    color: #2F5D50;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Tableau des dernières commandes */
+.tableau-commandes {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 15px;
+}
+
+.tableau-commandes table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.tableau-commandes th,
+.tableau-commandes td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #E8F0EC;
+}
+
+.tableau-commandes th {
+    background-color: #E8F0EC;
+    color: #2F5D50;
+}
+
+.tableau-commandes tr:hover {
+    background-color: #F5F5F5;
+}
+
+/* Adaptation mobile */
+@media (max-width: 768px) {
+    .statistiques-utilisateur {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Cartes de la rubrique Mes commandes */
+.commande-utilisateur {
+    background-color: #FFFFFF;
+    border: 1px solid #E8F0EC;
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.commande-utilisateur h4 {
+    color: #2F5D50;
+    font-size: 16px;
+    margin: 0 0 12px;
+}
+
+.commande-utilisateur p {
+    margin: 7px 0;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+/* Mise en page plus compacte sur mobile */
+@media (max-width: 768px) {
+    .commande-utilisateur {
+        padding: 14px;
+    }
+}
+
+/* Cartes de commandes de l'espace utilisateur */
+.carte-commande {
+    padding: 18px 20px;
+    margin-bottom: 15px;
+    border: 1px solid #E8F0EC;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.carte-commande h4 {
+    color: #2F5D50;
+    margin: 0 0 12px;
+    font-size: 16px;
+}
+
+.carte-commande p {
+    margin: 7px 0;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+/* Rubrique Mes informations */
+.contenu-utilisateur > p {
+    margin: 12px 0;
+    line-height: 1.6;
+}
+
+.contenu-utilisateur > p strong {
+    color: #2F5D50;
+}
+
+.contenu-utilisateur h3 {
+    color: #2F5D50;
+    margin-bottom: 20px;
+}
+
+/* Espacement de la carte d'informations */
+.contenu-utilisateur {
+    line-height: 1.5;
+}
+
+/* Bouton Voir le suivi */
+.bouton-suivi {
+    display: inline-block;
+    padding: 6px 10px;
+    background-color: #2F5D50;
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 13px;
+}
+
+.bouton-suivi:hover {
+    background-color: #24483E;
+}
+
+/* Page de suivi de commande */
+.suivi-commande {
+    max-width: 900px;
+    margin: 35px auto;
+    padding: 25px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.suivi-commande h2 {
+    color: #2F5D50;
+    margin-bottom: 20px;
+}
+
+.suivi-commande h3 {
+    color: #2F5D50;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.historique-commande {
+    margin: 15px 0 25px;
+    padding-left: 15px;
+    border-left: 3px solid #E8F0EC;
+}
+
+.etape-suivi {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    background-color: #F5F5F5;
+    border-radius: 6px;
+}
+
+.statut-suivi {
+    font-weight: bold;
+    color: #2F5D50;
+}
+
+.date-suivi {
+    color: #555555;
+}
+
+.bouton-suivi {
+    display: inline-block;
+    margin-right: 8px;
+    padding: 10px 15px;
+    background-color: #2F5D50;
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.bouton-suivi:hover {
+    background-color: #24483E;
+}
+
+@media (max-width: 600px) {
+    .suivi-commande {
+        margin: 20px 12px;
+        padding: 18px;
+    }
+
+    .etape-suivi {
+        flex-direction: column;
+    }
+}
+
+/* Tableau de bord employé */
+.tableau-bord-employe {
+    display: flex;
+    gap: 20px;
+    margin: 25px 0;
+}
+
+.carte-statistique-employe {
+    flex: 1;
+    background-color: #FFFFFF;
+    border: 1px solid #E8F0EC;
+    border-left: 5px solid #2F5D50;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.carte-statistique-employe h3 {
+    margin: 0 0 12px;
+    color: #2F5D50;
+    font-size: 16px;
+}
+
+.carte-statistique-employe p {
+    margin: 0;
+    font-size: 28px;
+    font-weight: bold;
+    color: #2F5D50;
+}
+
+/* Adaptation aux petits écrans */
+@media (max-width: 600px) {
+    .tableau-bord-employe {
+        flex-direction: column;
+    }
+}
+
+/* Titre et bienvenue de l'espace employé */
+.bienvenue-employe {
+    display: inline;
+    font-size: 0.85em;
+    font-weight: normal;
+    margin-left: 10px;
+    color: #2F5D50;
+}
+
+/* Filtres de recherche des commandes - espace employé */
+.filtres-commandes-employe {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    gap: 15px;
+    margin: 20px 0;
+    padding: 18px;
+    background-color: #F5F5F5;
+    border-radius: 8px;
+}
+
+.champ-filtre {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.champ-filtre label {
+    font-weight: bold;
+    color: #2F5D50;
+}
+
+.champ-filtre input,
+.champ-filtre select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font: inherit;
+    background-color: white;
+}
+
+.filtres-commandes-employe button,
+.bouton-reinitialiser {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2F5D50;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    font: inherit;
+}
+
+.bouton-reinitialiser {
+    background-color: #777;
+}
+
+@media (max-width: 600px) {
+    .filtres-commandes-employe {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .champ-filtre {
+        width: 100%;
+    }
+}
+
+/* Navigation de l'espace administrateur */
+.page-administrateur .navigation-admin {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+@media (max-width: 600px) {
+    .page-administrateur .navigation-admin {
+        flex-direction: column;
+    }
+
+    .page-administrateur .navigation-admin .btn {
+        text-align: center;
+    }
+}
+
+/* Navigation de l'espace administrateur */
+.page-administrateur .navigation-admin {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.page-administrateur .navigation-admin a {
+    display: inline-block;
+    padding: 10px 18px;
+    background-color: #2F5D50;
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.page-administrateur .navigation-admin a:hover {
+    background-color: #24483E;
+}
+/* Navigation de l'espace administrateur */
+.page-administrateur .navigation-admin {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.page-administrateur .navigation-admin a {
+    display: inline-block;
+    padding: 10px 18px;
+    background-color: #2F5D50;
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.page-administrateur .navigation-admin a:hover {
+    background-color: #24483E;
+}
+
+/* ================================
+   GESTION DES EMPLOYÉS
+================================ */
+
+.page-gestion-employes {
+    background-color: var(--couleur-fond);
+    color: #333333;
+}
+
+.page-gestion-employes header {
+    background-color: var(--couleur-principale);
+    color: white;
+    padding: 24px;
+}
+
+.page-gestion-employes header h1 {
+    margin: 0;
+}
+
+.page-gestion-employes header p {
+    margin: 8px 0 0;
+}
+
+.page-gestion-employes main.container {
+    width: 92%;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+.page-gestion-employes .section {
+    background-color: var(--couleur-section);
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.page-gestion-employes .section h2 {
+    color: var(--couleur-principale);
+    margin-top: 0;
+}
+
+.page-gestion-employes .formulaire {
+    max-width: 650px;
+    background-color: white;
+    padding: 24px;
+    border-radius: 12px;
+    margin: 20px 0 30px;
+}
+
+.page-gestion-employes .champ-formulaire input {
+    max-width: 100%;
+}
+
+.page-gestion-employes .formulaire .btn {
+    background-color: var(--couleur-principale);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 18px;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.page-gestion-employes .formulaire .btn:hover {
+    background-color: #24483E;
+}
+
+.page-gestion-employes .card {
+    background-color: white;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+}
+
+.page-gestion-employes .card h3 {
+    color: var(--couleur-principale);
+    margin-top: 0;
+}
+
+.page-gestion-employes main.container > p a {
+    color: var(--couleur-principale);
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .page-gestion-employes main.container {
+        width: 94%;
+        margin: 18px auto;
+    }
+
+    .page-gestion-employes .section {
+        padding: 16px;
+    }
+
+    .page-gestion-employes .formulaire {
+        padding: 16px;
+    }
+}
+
+/* =====================================
+   FORMULAIRE DE GESTION DES PLATS
+===================================== */
+
+.page-gestion-menus .formulaire {
+    max-width: 650px;
+    margin: 20px auto 30px;
+    padding: 28px;
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.page-gestion-menus .formulaire .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.page-gestion-menus .formulaire label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--couleur-principale);
+}
+
+.page-gestion-menus .formulaire input,
+.page-gestion-menus .formulaire textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #C8D5CE;
+    border-radius: 6px;
+    background-color: #FFFFFF;
+    font: inherit;
+}
+
+.page-gestion-menus .formulaire textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.page-gestion-menus .formulaire input:focus,
+.page-gestion-menus .formulaire textarea:focus {
+    outline: 2px solid var(--couleur-principale);
+    outline-offset: 2px;
+}
+
+.page-gestion-menus .formulaire .btn {
+    display: inline-block;
+    border: none;
+    background-color: var(--couleur-principale);
+    color: #FFFFFF;
+    padding: 12px 18px;
+    border-radius: 6px;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.page-gestion-menus .formulaire .btn:hover {
+    background-color: #24483E;
+}
+
+.page-gestion-menus .formulaire .message-succes,
+.page-gestion-menus .formulaire .message-erreur {
+    margin: 15px 0;
+}
+
+@media (max-width: 600px) {
+    .page-gestion-menus .formulaire {
+        padding: 18px;
+    }
+
+    .page-gestion-menus .formulaire .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Gestion des horaires */
+.page-gestion-horaires {
+    background-color: #F5F5F5;
+}
+
+.page-gestion-horaires header {
+    background-color: #2F5D50;
+    color: white;
+    padding: 25px 0;
+}
+
+.page-gestion-horaires .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.page-gestion-horaires .section {
+    background-color: #E8F0EC;
+    padding: 25px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.page-gestion-horaires .ligne-horaire {
+    display: grid;
+    grid-template-columns: 120px 100px 1fr;
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.page-gestion-horaires .champs-horaires {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.page-gestion-horaires .champs-horaires div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.page-gestion-horaires input[type="time"] {
+    padding: 8px;
+    border: 1px solid #C8D8D1;
+    border-radius: 5px;
+}
+
+.page-gestion-horaires .btn {
+    background-color: #2F5D50;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@media (max-width: 700px) {
+    .page-gestion-horaires .ligne-horaire {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Bandeau gestion des horaires : même style que l'espace administrateur */
+.page-gestion-horaires header {
+    background-color: var(--couleur-principale);
+    color: white;
+    padding: 24px;
+    text-align: left;
+}
+
+.page-gestion-horaires header h1 {
+    margin: 0;
+}
+
+.page-gestion-horaires header p {
+    margin: 8px 0 0;
+}
+
+/* Pied de page - horaires d'ouverture */
+.pied-de-page {
+    background-color: #2F5D50;
+    color: #FFFFFF;
+    margin-top: 40px;
+    padding: 30px 0;
+}
+
+.pied-de-page .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.pied-de-page h2 {
+    margin: 0 0 20px;
+    font-size: 1.4rem;
+}
+
+.pied-de-page .liste-horaires {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px 20px;
+}
+
+.pied-de-page .liste-horaires li {
+    font-size: 0.95rem;
+}
+
+@media (max-width: 700px) {
+    .pied-de-page .liste-horaires {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mise en page des pages légales */
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+}
+
+.header-container nav {
+    display: flex;
+    gap: 25px;
+}
+
+.header-container nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.legal-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+    line-height: 1.6;
+}
+
+.legal-container h2 {
+    color: #2F5D50;
+    margin-bottom: 25px;
+}
+
+.legal-container h3 {
+    color: #2F5D50;
+    margin-top: 25px;
+}
+
+.legal-container p {
+    margin-bottom: 15px;
+}
+
+/* En-tête des pages légales */
+body > header {
+    background-color: #2F5D50;
+    color: #FFFFFF;
+}
+
+body > header h1 {
+    color: #FFFFFF;
+}
+
+body > header nav a {
+    color: #FFFFFF;
+}
+
+/* Liens des pages légales */
+.legal-container a {
+    color: #2F5D50;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.legal-container a:hover {
+    text-decoration: underline;
+}
+
+/* Garder le pied de page en bas lorsque la page est courte */
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+/* ==============================
+   PAGE STATISTIQUES
+============================== */
+
+.page-statistiques {
+    background-color: #F5F5F5;
+}
+
+/* Bandeau supérieur */
+.page-statistiques header {
+    background-color: #2F5D50;
+    color: #FFFFFF;
+    padding: 25px 0;
+}
+
+.page-statistiques header .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.page-statistiques header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+.page-statistiques header p {
+    margin: 8px 0 0;
+}
+
+/* Zone principale */
+.page-statistiques main {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #E8F0EC;
+    border-radius: 8px;
+}
+
+/* Titres */
+.page-statistiques h2 {
+    color: #2F5D50;
+    margin-bottom: 20px;
+}
+
+.page-statistiques h3 {
+    margin-bottom: 15px;
+}
+
+/* Cartes de statistiques */
+.page-statistiques .statistiques-cartes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    background-color: #FFFFFF;
+    padding: 25px;
+    border: 1px solid #D5D5D5;
+    border-radius: 8px;
+}
+
+/* Responsive mobile */
+@media (max-width: 768px) {
+    .page-statistiques main {
+        margin: 15px;
+        padding: 20px;
+    }
+
+    .page-statistiques .statistiques-cartes {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Page statistiques */
+.page-statistiques main.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #E8F0EC;
+    border-radius: 8px;
+}
+
+.page-statistiques .section {
+    background: transparent;
+    padding: 0;
+}
+
+.page-statistiques .cartes-statistiques {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    background-color: #FFFFFF;
+    border: 1px solid #D5D5D5;
+    border-radius: 8px;
+    padding: 25px;
+}
+
+.page-statistiques .cartes-statistiques .card {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+}
+
+.page-statistiques .titre-statistique {
+    margin: 0 0 10px;
+    font-size: 16px;
+    color: #222222;
+}
+
+.page-statistiques .valeur-statistique {
+    margin: 0;
+    font-size: 28px;
+    color: #111111;
+}
+
+@media (max-width: 768px) {
+    .page-statistiques main.container {
+        margin: 15px;
+        padding: 20px;
+    }
+
+    .page-statistiques .cartes-statistiques {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================
+   PAGE STATISTIQUES
+========================= */
+
+.page-statistiques {
+    background-color: #F5F5F5;
+    min-height: 100vh;
+}
+
+.page-statistiques header {
+    background-color: #2F5D50;
+    color: white;
+    padding: 24px 0;
+}
+
+.page-statistiques header .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.page-statistiques header h1 {
+    margin: 0 0 8px;
+    font-size: 32px;
+}
+
+.page-statistiques header p {
+    margin: 0;
+}
+
+.page-statistiques main.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.page-statistiques .section {
+    background-color: #E8F0EC;
+    padding: 24px;
+    border-radius: 8px;
+}
+
+.page-statistiques .cartes-statistiques {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+.page-statistiques .cartes-statistiques .card {
+    display: block;
+    width: auto;
+    min-width: 0;
+    margin: 0;
+    padding: 24px;
+    background: #FFFFFF;
+    border: 1px solid #D8D8D8;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.page-statistiques .cartes-statistiques .card h3 {
+    margin: 0 0 12px;
+    font-size: 16px;
+}
+
+.page-statistiques .cartes-statistiques .card .valeur-statistique {
+    margin: 0;
+    font-size: 28px;
+    font-weight: bold;
+    color: #2F5D50;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 768px) {
+    .page-statistiques .cartes-statistiques {
+        grid-template-columns: 1fr;
+    }
+}
