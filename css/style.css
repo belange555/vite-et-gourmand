@@ -945,3 +945,13 @@ a:hover {
         text-align: left;
     }
 }
+
+/* Espacement des boutons sur téléphone uniquement */
+@media screen and (max-width: 600px) {
+    .actions-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+}

@@ -178,13 +178,13 @@ $plats = $requetePlats->fetchAll(PDO::FETCH_ASSOC);
 
 <?php endif; ?>
 
-    <p>
-        <a class="bouton" href="nos-menus.php">← Retour aux menus</a>
-        <a class="bouton"
-   href="commande.php?id=<?= $menu['id_menu'] ?>">
-    Passer commande
-</a>
-    </p>
+   <div class="actions-menu">
+    <a class="bouton" href="nos-menus.php">← Retour aux menus</a>
+
+    <a class="bouton" href="commande.php?id=<?= $menu['id_menu'] ?>">
+        Passer commande
+    </a>
+</div>
 
      </article>
 
