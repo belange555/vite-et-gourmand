@@ -147,6 +147,7 @@ foreach ($horairesEnregistres as $horaire) {
     <title>Gestion des horaires - Vite & Gourmand</title>
 
 <link rel="stylesheet" href="css/style.css">
+<link rel="icon" type="image/png" href="images/favicon-vite-et-gourmand.png">
 
 </head>
 

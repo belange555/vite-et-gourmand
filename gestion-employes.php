@@ -166,7 +166,7 @@ $employes = $stmtEmployes->fetchAll(PDO::FETCH_ASSOC);
     <title>Gestion des employés - Vite & Gourmand</title>
 
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" href="images/favicon-vite-et-gourmand.png">
 </head>
 
 <body class="page-gestion-employes">
