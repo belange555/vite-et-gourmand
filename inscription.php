@@ -93,12 +93,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Créer un compte - Vite & Gourmand</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
 
-    <header class="site-header">
-        <h1>Vite & Gourmand</h1>
-    </header>
+   <header class="site-header">
+    <div class="container">
+        <a href="index.php" aria-label="Retour à l'accueil">
+            <img
+                src="images/logo-vite-et-gourmand.png"
+                alt="Vite & Gourmand - Traiteur"
+                class="logo-site"
+            >
+        </a>
+    </div>
+</header>
 
     <main class="contenu-principal">
         <article class="carte-menu">

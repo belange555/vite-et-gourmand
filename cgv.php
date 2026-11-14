@@ -9,13 +9,18 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conditions générales de vente - Vite & Gourmand</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 
 <body>
 
 <header class="site-header">
     <div class="container">
-        <h1>Vite &amp; Gourmand</h1>
+      <img
+    src="images/logo-vite-et-gourmand.png"
+    alt="Vite & Gourmand - Traiteur"
+    class="logo-site"
+>
 
         <nav>
             <a href="index.php">Accueil</a>

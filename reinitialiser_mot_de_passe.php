@@ -94,13 +94,22 @@ if (strlen($motDePasse) < 8 || strlen($motDePasse) > 72) {
     <title>Réinitialiser mon mot de passe - Vite & Gourmand</title>
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 
 <body>
 
-    <header>
-        <h1>Vite & Gourmand</h1>
-    </header>
+    <header class="site-header">
+    <div class="container">
+        <a href="index.php" aria-label="Retour à l'accueil">
+            <img
+                src="images/logo-vite-et-gourmand.png"
+                alt="Vite & Gourmand - Traiteur"
+                class="logo-site"
+            >
+        </a>
+    </div>
+</header>
 
     <main>
 

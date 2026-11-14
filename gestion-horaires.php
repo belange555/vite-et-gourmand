@@ -152,10 +152,21 @@ foreach ($horairesEnregistres as $horaire) {
 
 <body class="page-gestion-horaires">
 
-<header>
+<header class="entete-administrateur">
     <div class="container">
-        <h1>Gestion des horaires</h1>
-        <p>Configurer les horaires d'ouverture de Vite & Gourmand</p>
+
+        <a href="index.php" aria-label="Retour à l'accueil">
+            <img
+                src="images/logo-vite-et-gourmand.png"
+                alt="Vite & Gourmand - Traiteur"
+                class="logo-site"
+            >
+        </a>
+
+        <div class="informations-administrateur">
+            <h1>Gestion des horaires</h1>
+            <p>Configurer les horaires d'ouverture de Vite & Gourmand</p>
+        </div>
     </div>
 </header>
 

@@ -82,13 +82,18 @@ $menus = $requete->fetchAll(PDO::FETCH_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nos menus - Vite & Gourmand</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 
 <body>
 
 <header class="site-header">
     <div class="entete-accueil">
-        <h1>Vite & Gourmand</h1>
+       <img
+    src="images/logo-vite-et-gourmand.png"
+    alt="Vite & Gourmand - Traiteur"
+    class="logo-site"
+>
 
         <nav class="navigation-principale">
             <a href="index.php">Accueil</a>

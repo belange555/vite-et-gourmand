@@ -166,14 +166,26 @@ $employes = $stmtEmployes->fetchAll(PDO::FETCH_ASSOC);
     <title>Gestion des employés - Vite & Gourmand</title>
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 
 <body class="page-gestion-employes">
 
-<header>
+<header class="entete-administrateur">
     <div class="container">
-        <h1>Gestion des employés</h1>
-        <p>Consulter et gérer les comptes employés</p>
+
+        <a href="index.php" aria-label="Retour à l'accueil">
+            <img
+                src="images/logo-vite-et-gourmand.png"
+                alt="Vite & Gourmand - Traiteur"
+                class="logo-site"
+            >
+        </a>
+
+        <div class="informations-administrateur">
+            <h1>Gestion des employés</h1>
+            <p>Consulter et gérer les comptes employés</p>
+        </div>
     </div>
 </header>
 

@@ -1,9 +1,14 @@
+
 /* ==========================================================
    VITE & GOURMAND — FEUILLE DE STYLES CONSOLIDÉE
    Palette commune + styles par page + responsive
    ========================================================== */
 
-/* 1. Variables et règles générales */
+
+/* ==========================================================
+   1. VARIABLES ET RÈGLES GÉNÉRALES
+   ========================================================== */
+
 :root {
     --couleur-principale: #2F5D50;
     --couleur-principale-hover: #24483E;
@@ -18,9 +23,19 @@
     --largeur-contenu: 1200px;
 }
 
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-html, body { min-height: 100%; }
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
 body {
     min-height: 100vh;
     margin: 0;
@@ -31,23 +46,41 @@ body {
     background: var(--couleur-fond);
     line-height: 1.6;
 }
-main { flex: 1; }
-img { max-width: 100%; }
+
+main {
+    flex: 1;
+}
+
+img {
+    max-width: 100%;
+}
+
 .container,
 .contenu-principal {
     width: 92%;
     max-width: var(--largeur-contenu);
     margin: 0 auto;
 }
-.contenu-principal { padding: 24px 0; }
 
-/* 2. Éléments communs : en-têtes, boutons, titres, cartes */
+.contenu-principal {
+    padding: 24px 0;
+}
+
+
+/* ==========================================================
+   2. ÉLÉMENTS COMMUNS : EN-TÊTES, BOUTONS ET CARTES
+   ========================================================== */
+
 .site-header {
     padding: 24px;
     color: var(--couleur-carte);
     background: var(--couleur-principale);
 }
-.site-header h1 { max-width: none; margin: 0; }
+
+.site-header h1 {
+    max-width: none;
+    margin: 0;
+}
 
 .site-header .container {
     display: flex;
@@ -65,6 +98,12 @@ img { max-width: 100%; }
     text-decoration: none;
     font-weight: bold;
 }
+.entete-employe {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .bouton,
 .btn {
     display: inline-block;
@@ -79,12 +118,25 @@ img { max-width: 100%; }
     cursor: pointer;
     transition: background-color .2s ease;
 }
-.bouton:hover,
-.btn:hover { background: var(--couleur-principale-hover); }
-.btn-danger { background: var(--couleur-erreur); }
-.btn-danger:hover { background: #812D2D; }
 
-.contenu-principal > h2 { color: var(--couleur-principale); margin-bottom: 24px; }
+.bouton:hover,
+.btn:hover {
+    background: var(--couleur-principale-hover);
+}
+
+.btn-danger {
+    background: var(--couleur-erreur);
+}
+
+.btn-danger:hover {
+    background: #812D2D;
+}
+
+.contenu-principal > h2 {
+    margin-bottom: 24px;
+    color: var(--couleur-principale);
+}
+
 .carte-menu,
 .contenu-utilisateur,
 .menu-utilisateur,
@@ -96,17 +148,23 @@ img { max-width: 100%; }
     box-shadow: var(--ombre-carte);
 }
 
-/* 3. Formulaires communs */
+
+/* ==========================================================
+   3. FORMULAIRES COMMUNS
+   ========================================================== */
+
 .champ-formulaire {
     display: flex;
     flex-direction: column;
     gap: 6px;
     margin-bottom: 20px;
 }
+
 .champ-formulaire label {
     color: var(--couleur-principale);
     font-weight: bold;
 }
+
 .champ-formulaire input,
 .champ-formulaire select,
 .champ-formulaire textarea,
@@ -121,6 +179,7 @@ img { max-width: 100%; }
     background: #FFFFFF;
     font: inherit;
 }
+
 .champ-formulaire input:focus,
 .champ-formulaire select:focus,
 .champ-formulaire textarea:focus,
@@ -129,16 +188,27 @@ img { max-width: 100%; }
     outline: 2px solid var(--couleur-principale);
     outline-offset: 2px;
 }
-textarea { resize: vertical; }
-.champ-formulaire input[type="email"] { width: 100%; }
 
-/* 4. Liste des menus et cartes */
+textarea {
+    resize: vertical;
+}
+
+.champ-formulaire input[type="email"] {
+    width: 100%;
+}
+
+
+/* ==========================================================
+   4. LISTE DES MENUS ET CARTES
+   ========================================================== */
+
 .grille-menus {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 24px;
     align-items: stretch;
 }
+
 .carte-menu {
     display: flex;
     flex-direction: column;
@@ -148,22 +218,58 @@ textarea { resize: vertical; }
     padding: 20px;
     transition: transform .2s ease, box-shadow .2s ease;
 }
-.grille-menus .carte-menu { margin-bottom: 0; }
-.carte-menu:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,.10); }
-.carte-menu h3 { margin-top: 0; color: var(--couleur-principale); font-size: 1.35rem; }
-.carte-menu h4 { margin: 24px 0 10px; color: var(--couleur-principale); font-size: 1rem; }
-.carte-menu p { margin: 12px 0; }
-.carte-menu > p { margin: 12px 0; }
-.carte-menu p strong { color: var(--couleur-principale); }
+
+.grille-menus .carte-menu {
+    margin-bottom: 0;
+}
+
+.carte-menu:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .10);
+}
+
+.carte-menu h3 {
+    margin-top: 0;
+    color: var(--couleur-principale);
+    font-size: 1.35rem;
+}
+
+.carte-menu h4 {
+    margin: 24px 0 10px;
+    color: var(--couleur-principale);
+    font-size: 1rem;
+}
+
+.carte-menu p,
+.carte-menu > p {
+    margin: 12px 0;
+}
+
+.carte-menu p strong {
+    color: var(--couleur-principale);
+}
+
 .carte-menu ul {
     margin-bottom: 0;
     padding: 16px 16px 16px 36px;
     border-radius: 8px;
     background: var(--couleur-section);
 }
-.carte-menu li { margin-bottom: 6px; }
-.carte-menu li:last-child { margin-bottom: 0; }
-.prix-menu span { color: var(--couleur-principale); font-size: 1.2rem; font-weight: bold; }
+
+.carte-menu li {
+    margin-bottom: 6px;
+}
+
+.carte-menu li:last-child {
+    margin-bottom: 0;
+}
+
+.prix-menu span {
+    color: var(--couleur-principale);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
 .image-menu {
     display: block;
     width: 100%;
@@ -172,12 +278,28 @@ textarea { resize: vertical; }
     border-radius: 10px;
     object-fit: cover;
 }
-.carte-menu .image-menu { max-height: 450px; }
-.titre-menu { margin: 0 0 20px; }
-.carte-menu > .image-menu { margin: 0 0 20px; }
-.carte-menu > h2:not(.titre-menu) { margin: 28px 0 16px; }
 
-/* 5. Détail d'un menu et composition */
+.carte-menu .image-menu {
+    max-height: 450px;
+}
+
+.titre-menu {
+    margin: 0 0 20px;
+}
+
+.carte-menu > .image-menu {
+    margin: 0 0 20px;
+}
+
+.carte-menu > h2:not(.titre-menu) {
+    margin: 28px 0 16px;
+}
+
+
+/* ==========================================================
+   5. DÉTAIL D'UN MENU ET COMPOSITION
+   ========================================================== */
+
 .image-menu-detail {
     width: 100%;
     height: 320px;
@@ -186,7 +308,11 @@ textarea { resize: vertical; }
     object-fit: cover;
     object-position: center;
 }
-.titre-composition { margin: 32px 0 18px; }
+
+.titre-composition {
+    margin: 32px 0 18px;
+}
+
 .composition-menu {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -195,28 +321,60 @@ textarea { resize: vertical; }
     padding: 0;
     list-style: none;
 }
-.composition-menu li { margin: 0; }
+
+.composition-menu li {
+    margin: 0;
+}
+
 .bloc-composition {
     padding: 18px;
     border-radius: 10px;
     background: var(--couleur-section);
 }
+
 .bloc-composition h3 {
     margin: 0 0 14px;
     padding-bottom: 8px;
-    border-bottom: 1px solid rgba(47,93,80,.2);
+    border-bottom: 1px solid rgba(47, 93, 80, .2);
     color: var(--couleur-principale);
 }
-.detail-plat h4 { margin: 0 0 8px; color: #333; }
-.detail-plat p { margin: 6px 0 12px; line-height: 1.5; }
-.detail-plat .allergenes,
-.allergenes-menu { color: #6B4B2A; font-size: .9rem; }
-.allergenes-menu { margin: 8px 0 0; }
-.message-composition,
-.composition-indisponible { padding: 16px; border-radius: 8px; background: var(--couleur-section); }
-.message-composition { color: #555; }
 
-/* 6. Accueil */
+.detail-plat h4 {
+    margin: 0 0 8px;
+    color: #333;
+}
+
+.detail-plat p {
+    margin: 6px 0 12px;
+    line-height: 1.5;
+}
+
+.detail-plat .allergenes,
+.allergenes-menu {
+    color: #6B4B2A;
+    font-size: .9rem;
+}
+
+.allergenes-menu {
+    margin: 8px 0 0;
+}
+
+.message-composition,
+.composition-indisponible {
+    padding: 16px;
+    border-radius: 8px;
+    background: var(--couleur-section);
+}
+
+.message-composition {
+    color: #555;
+}
+
+
+/* ==========================================================
+   6. PAGE ACCUEIL
+   ========================================================== */
+
 .entete-accueil,
 .entete-utilisateur {
     display: flex;
@@ -226,11 +384,61 @@ textarea { resize: vertical; }
     max-width: var(--largeur-contenu);
     margin: 0 auto;
 }
-.entete-accueil { gap: 30px; }
-.navigation-principale { display: flex; align-items: center; gap: 36px; }
-.navigation-principale a { color: var(--couleur-carte); text-decoration: none; font-weight: 500; }
-.navigation-principale a:hover { text-decoration: underline; }
-.navigation-principale .bouton { padding: 10px 20px; border-radius: 8px; }
+
+.entete-accueil {
+    gap: 30px;
+}
+
+.entete-accueil h1 img {
+    display: block;
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+}
+
+.navigation-principale {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+}
+
+.navigation-principale a {
+    color: var(--couleur-carte);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.navigation-principale a:hover {
+    text-decoration: underline;
+}
+
+.navigation-principale .bouton {
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+/* LOGO COMMUN DU SITE */
+
+.logo-site {
+    width: 150px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+/* En-tête de l'espace administrateur */
+.entete-administrateur .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.entete-administrateur .logo-site {
+    flex-shrink: 0;
+}
+
+/* SECTION ACCUEIL */
+
 .section-accueil {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -238,21 +446,100 @@ textarea { resize: vertical; }
     gap: 48px;
     padding: 24px 0 56px;
 }
-.texte-accueil h2 { margin: 0 0 24px; color: var(--couleur-principale); font-size: 2rem; line-height: 1.25; }
-.texte-accueil p { margin-bottom: 60px; font-size: 1.1rem; }
-.texte-accueil .bouton { min-width: 190px; padding: 14px 24px; text-align: center; }
-.image-accueil img { display: block; width: 100%; height: 320px; border-radius: 12px; object-fit: cover; }
-.section-nos-menus { padding-top: 8px; }
-.section-nos-menus > h2 { margin-bottom: 18px; color: #111; }
-.section-nos-menus .carte-menu { overflow: hidden; padding: 0; }
-.section-nos-menus .image-menu { height: 150px; margin: 0; border-radius: 0; }
-.contenu-carte-menu { display: flex; flex: 1; flex-direction: column; padding: 14px; }
-.contenu-carte-menu h3 { margin: 0 0 8px; color: #111; font-size: 1rem; }
-.description-menu { margin: 0 0 12px; color: #777; font-size: .9rem; line-height: 1.35; }
-.informations-menu { margin: 0 0 14px; font-size: .9rem; line-height: 1.4; }
-.bouton-details { align-self: center; min-width: 90px; margin-top: auto; padding: 8px 16px; text-align: center; }
 
-/* 7. Filtres de la page Nos menus */
+/* TITRE */
+
+.texte-accueil h2 {
+    margin: 0 0 24px;
+    color: var(--couleur-principale);
+    font-size: 2rem;
+    line-height: 1.25;
+}
+
+/* TEXTE */
+
+.texte-accueil p {
+    margin-bottom: 60px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* BOUTON */
+
+.texte-accueil .bouton {
+    display: inline-block;
+    min-width: 190px;
+    padding: 14px 24px;
+    text-align: center;
+}
+
+.image-accueil img {
+    display: block;
+    width: 100%;
+    height: 320px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.section-nos-menus {
+    padding-top: 8px;
+}
+
+.section-nos-menus > h2 {
+    margin-bottom: 18px;
+    color: #111;
+}
+
+.section-nos-menus .carte-menu {
+    overflow: hidden;
+    padding: 0;
+}
+
+.section-nos-menus .image-menu {
+    height: 150px;
+    margin: 0;
+    border-radius: 0;
+}
+
+.contenu-carte-menu {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 14px;
+}
+
+.contenu-carte-menu h3 {
+    margin: 0 0 8px;
+    color: #111;
+    font-size: 1rem;
+}
+
+.description-menu {
+    margin: 0 0 12px;
+    color: #777;
+    font-size: .9rem;
+    line-height: 1.35;
+}
+
+.informations-menu {
+    margin: 0 0 14px;
+    font-size: .9rem;
+    line-height: 1.4;
+}
+
+.bouton-details {
+    align-self: center;
+    min-width: 90px;
+    margin-top: auto;
+    padding: 8px 16px;
+    text-align: center;
+}
+
+
+/* ==========================================================
+   7. FILTRES DE LA PAGE NOS MENUS
+   ========================================================== */
+
 .filtres-menus {
     display: flex;
     flex-wrap: wrap;
@@ -260,6 +547,7 @@ textarea { resize: vertical; }
     gap: 12px;
     margin: 25px 0;
 }
+
 .filtres-menus select,
 .filtres-menus input[type="search"] {
     min-height: 40px;
@@ -269,12 +557,32 @@ textarea { resize: vertical; }
     background: #FFF;
     font-size: 14px;
 }
-.filtres-menus select { min-width: 170px; }
-.filtres-menus input[type="search"] { width: 240px; }
-.filtres-menus .bouton { display: inline-flex; min-height: 40px; align-items: center; justify-content: center; padding: 10px 16px; }
-#nos-menus { scroll-margin-top: 30px; }
 
-/* 8. Espace utilisateur */
+.filtres-menus select {
+    min-width: 170px;
+}
+
+.filtres-menus input[type="search"] {
+    width: 240px;
+}
+
+.filtres-menus .bouton {
+    display: inline-flex;
+    min-height: 40px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+}
+
+#nos-menus {
+    scroll-margin-top: 30px;
+}
+
+
+/* ==========================================================
+   8. ESPACE UTILISATEUR
+   ========================================================== */
+
 .espace-utilisateur {
     display: grid;
     grid-template-columns: 230px minmax(0, 1fr);
@@ -282,52 +590,247 @@ textarea { resize: vertical; }
     gap: 24px;
     margin-top: 24px;
 }
-.menu-utilisateur { display: flex; flex-direction: column; gap: 8px; padding: 20px; }
-.lien-utilisateur { display: block; padding: 12px; border-radius: 8px; color: #333; text-decoration: none; transition: background-color .2s ease; }
+
+.menu-utilisateur {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 20px;
+}
+
+.lien-utilisateur {
+    display: block;
+    padding: 12px;
+    border-radius: 8px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color .2s ease;
+}
+
 .lien-utilisateur:hover,
-.lien-utilisateur.actif { background: var(--couleur-section); color: var(--couleur-principale); }
-.contenu-utilisateur { padding: 24px; line-height: 1.5; }
-.contenu-utilisateur h3 { margin: 0 0 20px; color: var(--couleur-principale); }
-.contenu-utilisateur > p { margin: 12px 0; line-height: 1.6; }
-.contenu-utilisateur > p strong { color: var(--couleur-principale); }
-.profil-utilisateur { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
-.profil-utilisateur a { color: var(--couleur-carte); text-decoration: underline; }
-.statistiques-utilisateur { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 15px; margin: 25px 0; }
-.carte-statistique { padding: 18px; border-radius: 10px; background: var(--couleur-section); text-align: center; }
-.carte-statistique h4 { margin: 0 0 10px; color: var(--couleur-principale); font-size: 14px; }
-.carte-statistique p { margin: 0; color: var(--couleur-principale); font-size: 24px; font-weight: bold; }
-.tableau-commandes { width: 100%; overflow-x: auto; margin-top: 15px; }
+.lien-utilisateur.actif {
+    background: var(--couleur-section);
+    color: var(--couleur-principale);
+}
+
+.contenu-utilisateur {
+    padding: 24px;
+    line-height: 1.5;
+}
+
+.contenu-utilisateur h3 {
+    margin: 0 0 20px;
+    color: var(--couleur-principale);
+}
+
+.contenu-utilisateur > p {
+    margin: 12px 0;
+    line-height: 1.6;
+}
+
+.contenu-utilisateur > p strong {
+    color: var(--couleur-principale);
+}
+
+.profil-utilisateur {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+}
+
+.profil-utilisateur a {
+    color: var(--couleur-carte);
+    text-decoration: underline;
+}
+
+.statistiques-utilisateur {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.carte-statistique {
+    padding: 18px;
+    border-radius: 10px;
+    background: var(--couleur-section);
+    text-align: center;
+}
+
+.carte-statistique h4 {
+    margin: 0 0 10px;
+    color: var(--couleur-principale);
+    font-size: 14px;
+}
+
+.carte-statistique p {
+    margin: 0;
+    color: var(--couleur-principale);
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.tableau-commandes {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 15px;
+}
+
 .tableau-commandes table {
     width: 100%;
     min-width: 600px;
     border-collapse: collapse;
     font-size: 14px;
 }
+
 .tableau-commandes th,
-.tableau-commandes td { padding: 12px; border-bottom: 1px solid var(--couleur-section); text-align: left; }
-.tableau-commandes th { background: var(--couleur-section); color: var(--couleur-principale); }
-.tableau-commandes tr:hover { background: var(--couleur-fond); }
+.tableau-commandes td {
+    padding: 12px;
+    border-bottom: 1px solid var(--couleur-section);
+    text-align: left;
+}
+
+.tableau-commandes th {
+    background: var(--couleur-section);
+    color: var(--couleur-principale);
+}
+
+.tableau-commandes tr:hover {
+    background: var(--couleur-fond);
+}
+
 .commande-utilisateur,
-.carte-commande { margin-bottom: 15px; padding: 18px 20px; border: 1px solid var(--couleur-section); }
+.carte-commande {
+    margin-bottom: 15px;
+    padding: 18px 20px;
+    border: 1px solid var(--couleur-section);
+}
+
 .commande-utilisateur h4,
-.carte-commande h4 { margin: 0 0 12px; color: var(--couleur-principale); font-size: 16px; }
+.carte-commande h4 {
+    margin: 0 0 12px;
+    color: var(--couleur-principale);
+    font-size: 16px;
+}
+
 .commande-utilisateur p,
-.carte-commande p { margin: 7px 0; font-size: 14px; line-height: 1.5; }
-.bouton-suivi { display: inline-block; margin-right: 8px; padding: 8px 12px; border-radius: 5px; background: var(--couleur-principale); color: #FFF; font-size: 13px; font-weight: bold; text-decoration: none; }
-.bouton-suivi:hover { background: var(--couleur-principale-hover); }
+.carte-commande p {
+    margin: 7px 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
 
-/* 9. Suivi de commande */
-.suivi-commande { max-width: 900px; margin: 35px auto; padding: 25px; }
+.bouton-suivi {
+    display: inline-block;
+    margin-right: 8px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    background: var(--couleur-principale);
+    color: #FFF;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.bouton-suivi:hover {
+    background: var(--couleur-principale-hover);
+}
+
+
+/* ==========================================================
+   9. SUIVI DE COMMANDE
+   ========================================================== */
+
+.suivi-commande {
+    max-width: 900px;
+    margin: 35px auto;
+    padding: 25px;
+}
+
 .suivi-commande h2,
-.suivi-commande h3 { color: var(--couleur-principale); }
-.suivi-commande h2 { margin-bottom: 20px; }
-.suivi-commande h3 { margin: 25px 0 15px; }
-.historique-commande { margin: 15px 0 25px; padding-left: 15px; border-left: 3px solid var(--couleur-section); }
-.etape-suivi { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; margin-bottom: 10px; padding: 12px 15px; border-radius: 6px; background: var(--couleur-fond); }
-.statut-suivi { color: var(--couleur-principale); font-weight: bold; }
-.date-suivi { color: #555; }
+.suivi-commande h3 {
+    color: var(--couleur-principale);
+}
 
-/* 10. Contact */
+.suivi-commande h2 {
+    margin-bottom: 20px;
+}
+
+.suivi-commande h3 {
+    margin: 25px 0 15px;
+}
+
+.historique-commande {
+    margin: 15px 0 25px;
+    padding-left: 15px;
+    border-left: 3px solid var(--couleur-section);
+}
+
+.etape-suivi {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 10px;
+    padding: 12px 15px;
+    border-radius: 6px;
+    background: var(--couleur-fond);
+}
+
+.statut-suivi {
+    color: var(--couleur-principale);
+    font-weight: bold;
+}
+
+.date-suivi {
+    color: #555;
+}
+
+button.lien-annulation {
+    appearance: none;
+    margin: 8px 0;
+    padding: 0;
+    border: none;
+    background: none;
+    box-shadow: none;
+    color: var(--couleur-principale);
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+button.lien-annulation:hover {
+    color: #1E4037;
+    text-decoration: none;
+}
+
+.actions-suivi {
+    margin-top: 20px;
+}
+
+.bouton-deconnexion {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 5px;
+    background: var(--couleur-principale);
+    color: #FFFFFF;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.bouton-deconnexion:hover {
+    background: var(--couleur-principale-hover);
+    color: #FFFFFF;
+}
+
+
+/* ==========================================================
+   10. PAGE CONTACT
+   ========================================================== */
+
 .section-contact {
     max-width: 900px;
     margin: 40px auto;
@@ -335,8 +838,16 @@ textarea { resize: vertical; }
     border-radius: 12px;
     background: var(--couleur-section);
 }
-.section-contact h2 { margin-bottom: 20px; color: var(--couleur-principale); }
-.section-contact > p { margin-bottom: 40px; }
+
+.section-contact h2 {
+    margin-bottom: 20px;
+    color: var(--couleur-principale);
+}
+
+.section-contact > p {
+    margin-bottom: 40px;
+}
+
 .formulaire-contact {
     max-width: 700px;
     margin: 40px auto 0;
@@ -345,7 +856,13 @@ textarea { resize: vertical; }
     background: #FFF;
     box-shadow: var(--ombre-carte);
 }
-.formulaire-contact label { display: block; margin-bottom: 10px; font-weight: bold; }
+
+.formulaire-contact label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
 .formulaire-contact input,
 .formulaire-contact select,
 .formulaire-contact textarea {
@@ -356,58 +873,312 @@ textarea { resize: vertical; }
     border-radius: 6px;
     font: inherit;
 }
-.formulaire-contact textarea { min-height: 120px; }
-.formulaire-contact button { display: block; width: 250px; max-width: 100%; margin: 10px auto 0; }
+
+.formulaire-contact textarea {
+    min-height: 120px;
+}
+
+.formulaire-contact button {
+    display: block;
+    width: 250px;
+    max-width: 100%;
+    margin: 10px auto 0;
+}
+
 .message-succes,
-.message-erreur { max-width: 650px; margin: 20px auto; padding: 15px; border-radius: 8px; background: #FFF; text-align: center; }
-.message-succes { color: var(--couleur-principale); }
-.message-erreur { color: #B00020; }
+.message-erreur {
+    max-width: 650px;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 8px;
+    background: #FFF;
+    text-align: center;
+}
 
-/* 11. Espace administrateur — commandes et tableau de bord */
-.page-administrateur { background: var(--couleur-fond); color: var(--couleur-texte); }
-.page-administrateur header { padding: 24px; background: var(--couleur-principale); color: #FFF; }
-.page-administrateur header h1 { margin: 0; font-size: 28px; }
-.page-administrateur header p { margin: 8px 0 0; color: var(--couleur-section); }
-.page-administrateur main.container { max-width: var(--largeur-contenu); margin: 30px auto; padding: 0; }
-.page-administrateur .section { padding: 25px; border-radius: 12px; background: var(--couleur-section); }
-.page-administrateur .section h2 { margin: 0 0 25px; color: var(--couleur-principale); }
-.page-administrateur .commande-admin { margin-bottom: 22px; padding: 24px; border: 1px solid #E0E7E3; border-radius: 12px; background: #FFF; box-shadow: 0 3px 10px rgba(0,0,0,.06); }
-.page-administrateur .commande-admin h3 { margin: 0; padding-bottom: 12px; border-bottom: 1px solid var(--couleur-section); color: var(--couleur-principale); }
-.page-administrateur .commande-admin p { margin: 8px 0; line-height: 1.6; }
-.page-administrateur .commande-admin strong { color: var(--couleur-principale); }
-.page-administrateur .commande-admin hr { margin: 22px 0; border: 0; border-top: 1px solid var(--couleur-section); }
-.page-administrateur .form-action-admin { margin-top: 18px; }
-.page-administrateur .form-action-admin label { display: block; margin-bottom: 8px; color: var(--couleur-principale); font-weight: bold; }
-.page-administrateur .form-action-admin textarea { display: block; width: 100%; max-width: 600px; margin-bottom: 12px; padding: 12px; border: 1px solid #C8D5CE; border-radius: 8px; font: inherit; }
-.page-administrateur .form-action-admin textarea:focus { outline: 2px solid var(--couleur-principale); border-color: var(--couleur-principale); }
-.page-administrateur .form-action-admin .btn { padding: 11px 18px; border-radius: 7px; background: var(--couleur-principale); color: #FFF; }
-.page-administrateur .form-action-admin .btn:hover { background: var(--couleur-principale-hover); }
-.page-administrateur .form-action-admin .btn-danger { background: var(--couleur-erreur); }
-.page-administrateur .form-action-admin .btn-danger:hover { background: #812D2D; }
-.page-administrateur .message { margin-bottom: 20px; padding: 14px 18px; border-radius: 8px; }
-.page-administrateur .message.succes { background: #E2F2E7; color: #245B36; }
-.page-administrateur .message.erreur { background: #FBE8E8; color: #8A2525; }
-.page-administrateur main.container > p a { color: var(--couleur-principale); font-weight: bold; }
-.page-administrateur .navigation-admin { display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 25px; }
-.page-administrateur .navigation-admin a { display: inline-block; padding: 10px 18px; border-radius: 6px; background: var(--couleur-principale); color: #FFF; font-weight: bold; text-decoration: none; }
-.page-administrateur .navigation-admin a:hover { background: var(--couleur-principale-hover); }
+.message-succes {
+    color: var(--couleur-principale);
+}
 
-/* 12. Gestion des menus — liste et formulaires */
-.page-gestion-menus { background: var(--couleur-fond); color: var(--couleur-texte); }
-.page-gestion-menus header { padding: 24px; background: var(--couleur-principale); color: #FFF; }
-.page-gestion-menus header h1 { margin: 0; font-size: 28px; }
-.page-gestion-menus header p { margin: 8px 0 0; }
-.page-gestion-menus main.container { max-width: var(--largeur-contenu); margin: 30px auto; }
-.page-gestion-menus .section { padding: 24px; border-radius: 12px; background: var(--couleur-section); }
-.page-gestion-menus .entete-gestion { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 24px; }
-.page-gestion-menus .entete-gestion h2 { margin: 0; color: var(--couleur-principale); }
-.page-gestion-menus .grille-menus-admin { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 24px; }
-.page-gestion-menus .menu-admin { display: flex; flex-direction: column; min-width: 0; padding: 20px; border-radius: 12px; background: #FFF; box-shadow: var(--ombre-carte); }
-.page-gestion-menus .menu-admin h3 { margin-top: 0; color: var(--couleur-principale); }
-.page-gestion-menus .menu-admin .image-menu-admin { display: block; width: 100%; max-width: 100%; height: 220px; margin: 10px 0 16px; border-radius: 8px; object-fit: cover; object-position: center; }
-.page-gestion-menus .menu-admin p { margin: 8px 0; overflow-wrap: anywhere; }
-.page-gestion-menus .menu-admin strong { color: var(--couleur-principale); }
-.page-gestion-menus .menu-admin .btn { align-self: flex-start; margin-top: auto; }
+.message-erreur {
+    color: #B00020;
+}
+
+
+/* ==========================================================
+   11. ESPACE ADMINISTRATEUR
+   ========================================================== */
+
+.page-administrateur {
+    background: var(--couleur-fond);
+    color: var(--couleur-texte);
+}
+
+.page-administrateur header {
+    padding: 24px;
+    background: var(--couleur-principale);
+    color: #FFF;
+}
+
+.page-administrateur header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.page-administrateur header p {
+    margin: 8px 0 0;
+    color: var(--couleur-section);
+}
+
+.page-administrateur main.container {
+    max-width: var(--largeur-contenu);
+    margin: 30px auto;
+    padding: 0;
+}
+
+.page-administrateur .section {
+    padding: 25px;
+    border-radius: 12px;
+    background: var(--couleur-section);
+}
+
+.page-administrateur .section h2 {
+    margin: 0 0 25px;
+    color: var(--couleur-principale);
+}
+
+.page-administrateur .commande-admin {
+    margin-bottom: 22px;
+    padding: 24px;
+    border: 1px solid #E0E7E3;
+    border-radius: 12px;
+    background: #FFF;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .06);
+}
+
+.page-administrateur .commande-admin h3 {
+    margin: 0;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--couleur-section);
+    color: var(--couleur-principale);
+}
+
+.page-administrateur .commande-admin p {
+    margin: 8px 0;
+    line-height: 1.6;
+}
+
+.page-administrateur .commande-admin strong {
+    color: var(--couleur-principale);
+}
+
+.page-administrateur .commande-admin hr {
+    margin: 22px 0;
+    border: 0;
+    border-top: 1px solid var(--couleur-section);
+}
+
+.page-administrateur .form-action-admin {
+    margin-top: 18px;
+}
+
+.page-administrateur .form-action-admin label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--couleur-principale);
+    font-weight: bold;
+}
+
+.page-administrateur .form-action-admin textarea {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 12px;
+    padding: 12px;
+    border: 1px solid #C8D5CE;
+    border-radius: 8px;
+    font: inherit;
+}
+
+.page-administrateur .form-action-admin textarea:focus {
+    outline: 2px solid var(--couleur-principale);
+    border-color: var(--couleur-principale);
+}
+
+.page-administrateur .form-action-admin .btn {
+    padding: 11px 18px;
+    border-radius: 7px;
+    background: var(--couleur-principale);
+    color: #FFF;
+}
+
+.page-administrateur .form-action-admin .btn:hover {
+    background: var(--couleur-principale-hover);
+}
+
+.page-administrateur .form-action-admin .btn-danger {
+    background: var(--couleur-erreur);
+}
+
+.page-administrateur .form-action-admin .btn-danger:hover {
+    background: #812D2D;
+}
+
+.page-administrateur .message {
+    margin-bottom: 20px;
+    padding: 14px 18px;
+    border-radius: 8px;
+}
+
+.page-administrateur .message.succes {
+    background: #E2F2E7;
+    color: #245B36;
+}
+
+.page-administrateur .message.erreur {
+    background: #FBE8E8;
+    color: #8A2525;
+}
+
+.page-administrateur main.container > p a {
+    color: var(--couleur-principale);
+    font-weight: bold;
+}
+
+.page-administrateur .navigation-admin {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.page-administrateur .navigation-admin a {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 6px;
+    background: var(--couleur-principale);
+    color: #FFF;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.page-administrateur .navigation-admin a:hover {
+    background: var(--couleur-principale-hover);
+}
+
+.bouton-menu-admin {
+    display: none;
+}
+
+.btn-retour-admin {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 5px;
+    background: var(--couleur-principale);
+    color: white !important;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.btn-retour-admin:hover {
+    background: var(--couleur-principale-hover);
+    color: white !important;
+}
+
+
+/* ==========================================================
+   12. GESTION DES MENUS
+   ========================================================== */
+
+.page-gestion-menus {
+    background: var(--couleur-fond);
+    color: var(--couleur-texte);
+}
+
+.page-gestion-menus header {
+    padding: 24px;
+    background: var(--couleur-principale);
+    color: #FFF;
+}
+
+.page-gestion-menus header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.page-gestion-menus header p {
+    margin: 8px 0 0;
+}
+
+.page-gestion-menus main.container {
+    max-width: var(--largeur-contenu);
+    margin: 30px auto;
+}
+
+.page-gestion-menus .section {
+    padding: 24px;
+    border-radius: 12px;
+    background: var(--couleur-section);
+}
+
+.page-gestion-menus .entete-gestion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.page-gestion-menus .entete-gestion h2 {
+    margin: 0;
+    color: var(--couleur-principale);
+}
+
+.page-gestion-menus .grille-menus-admin {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.page-gestion-menus .menu-admin {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 20px;
+    border-radius: 12px;
+    background: #FFF;
+    box-shadow: var(--ombre-carte);
+}
+
+.page-gestion-menus .menu-admin h3 {
+    margin-top: 0;
+    color: var(--couleur-principale);
+}
+
+.page-gestion-menus .menu-admin .image-menu-admin {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: 220px;
+    margin: 10px 0 16px;
+    border-radius: 8px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.page-gestion-menus .menu-admin p {
+    margin: 8px 0;
+    overflow-wrap: anywhere;
+}
+
+.page-gestion-menus .menu-admin strong {
+    color: var(--couleur-principale);
+}
+
+.page-gestion-menus .menu-admin .btn {
+    align-self: flex-start;
+    margin-top: auto;
+}
+
 .page-gestion-menus .formulaire-menu,
 .page-gestion-menus .formulaire {
     max-width: 900px;
@@ -417,107 +1188,554 @@ textarea { resize: vertical; }
     background: #FFF;
     box-shadow: var(--ombre-carte);
 }
-.page-gestion-menus .formulaire-menu form { width: 100%; }
-.page-gestion-menus .formulaire-menu .champ-formulaire { margin-bottom: 20px; }
-.page-gestion-menus .formulaire-menu h2 { margin-top: 28px; color: var(--couleur-principale); }
-.page-gestion-menus .formulaire-menu p { margin-bottom: 20px; }
-.page-gestion-menus .formulaire-menu .btn { margin-top: 12px; }
-.page-gestion-menus .formulaire .form-group { display: flex; flex-direction: column; margin-bottom: 20px; }
-.page-gestion-menus .formulaire label { margin-bottom: 8px; color: var(--couleur-principale); font-weight: bold; }
-.page-gestion-menus .formulaire textarea { min-height: 120px; }
-.page-gestion-menus .formulaire .btn { display: inline-block; padding: 12px 18px; border: 0; border-radius: 6px; background: var(--couleur-principale); color: #FFF; font: inherit; font-weight: bold; text-decoration: none; cursor: pointer; }
-.page-gestion-menus .formulaire .btn:hover { background: var(--couleur-principale-hover); }
+
+.page-gestion-menus .formulaire-menu form {
+    width: 100%;
+}
+
+.page-gestion-menus .formulaire-menu .champ-formulaire {
+    margin-bottom: 20px;
+}
+
+.page-gestion-menus .formulaire-menu h2 {
+    margin-top: 28px;
+    color: var(--couleur-principale);
+}
+
+.page-gestion-menus .formulaire-menu p {
+    margin-bottom: 20px;
+}
+
+.page-gestion-menus .formulaire-menu .btn {
+    margin-top: 12px;
+}
+
+.page-gestion-menus .formulaire .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.page-gestion-menus .formulaire label {
+    margin-bottom: 8px;
+    color: var(--couleur-principale);
+    font-weight: bold;
+}
+
+.page-gestion-menus .formulaire textarea {
+    min-height: 120px;
+}
+
+.page-gestion-menus .formulaire .btn {
+    display: inline-block;
+    padding: 12px 18px;
+    border: 0;
+    border-radius: 6px;
+    background: var(--couleur-principale);
+    color: #FFF;
+    font: inherit;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.page-gestion-menus .formulaire .btn:hover {
+    background: var(--couleur-principale-hover);
+}
+
 .page-gestion-menus .formulaire .message-succes,
-.page-gestion-menus .formulaire .message-erreur { margin: 15px 0; }
-.page-gestion-menus .formulaire-menu .btn-danger { margin-top: 16px; background: var(--couleur-erreur); }
-.page-gestion-menus .formulaire-menu .btn-danger:hover { background: #812D2D; }
+.page-gestion-menus .formulaire .message-erreur {
+    margin: 15px 0;
+}
 
-/* 13. Gestion des employés */
-.page-gestion-employes { background: var(--couleur-fond); color: var(--couleur-texte); }
-.page-gestion-employes header { padding: 24px; background: var(--couleur-principale); color: #FFF; }
-.page-gestion-employes header h1 { margin: 0; }
-.page-gestion-employes header p { margin: 8px 0 0; }
-.page-gestion-employes main.container { max-width: var(--largeur-contenu); margin: 30px auto; }
-.page-gestion-employes .section { padding: 25px; border-radius: 12px; background: var(--couleur-section); }
-.page-gestion-employes .section h2 { margin-top: 0; color: var(--couleur-principale); }
-.page-gestion-employes .formulaire { max-width: 650px; margin: 20px 0 30px; padding: 24px; border-radius: 12px; background: #FFF; }
-.page-gestion-employes .champ-formulaire input { max-width: 100%; }
-.page-gestion-employes .formulaire .btn { padding: 12px 18px; border: 0; border-radius: 6px; background: var(--couleur-principale); color: #FFF; font: inherit; font-weight: bold; cursor: pointer; }
-.page-gestion-employes .formulaire .btn:hover { background: var(--couleur-principale-hover); }
-.page-gestion-employes .card { margin: 15px 0; padding: 20px; border-radius: 10px; background: #FFF; box-shadow: 0 3px 10px rgba(0,0,0,.06); }
-.page-gestion-employes .card h3 { margin-top: 0; color: var(--couleur-principale); }
-.page-gestion-employes main.container > p a { color: var(--couleur-principale); font-weight: bold; }
+.page-gestion-menus .formulaire-menu .btn-danger {
+    margin-top: 16px;
+    background: var(--couleur-erreur);
+}
 
-/* 14. Gestion des horaires */
-.page-gestion-horaires { background: var(--couleur-fond); }
-.page-gestion-horaires header { padding: 24px; background: var(--couleur-principale); color: #FFF; text-align: left; }
-.page-gestion-horaires header h1 { margin: 0; }
-.page-gestion-horaires header p { margin: 8px 0 0; }
-.page-gestion-horaires .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
-.page-gestion-horaires .section { margin-top: 20px; padding: 25px; border-radius: 10px; background: var(--couleur-section); }
-.page-gestion-horaires .ligne-horaire { display: grid; grid-template-columns: 120px 100px minmax(0,1fr); align-items: center; gap: 20px; margin-bottom: 12px; padding: 15px; border-radius: 8px; background: #FFF; }
-.page-gestion-horaires .champs-horaires { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-.page-gestion-horaires .champs-horaires div { display: flex; flex-direction: column; gap: 6px; }
-.page-gestion-horaires input[type="time"] { padding: 8px; border: 1px solid #C8D8D1; border-radius: 5px; }
-.page-gestion-horaires .btn { padding: 10px 16px; border: 0; border-radius: 5px; background: var(--couleur-principale); color: #FFF; cursor: pointer; }
+.page-gestion-menus .formulaire-menu .btn-danger:hover {
+    background: #812D2D;
+}
 
-/* 15. Espace employé */
-.tableau-bord-employe { display: flex; gap: 20px; margin: 25px 0; }
-.carte-statistique-employe { flex: 1; padding: 20px; border: 1px solid var(--couleur-section); border-left: 5px solid var(--couleur-principale); border-radius: 8px; background: #FFF; box-shadow: 0 2px 6px rgba(0,0,0,.08); }
-.carte-statistique-employe h3 { margin: 0 0 12px; color: var(--couleur-principale); font-size: 16px; }
-.carte-statistique-employe p { margin: 0; color: var(--couleur-principale); font-size: 28px; font-weight: bold; }
-.bienvenue-employe { display: inline; margin-left: 10px; color: var(--couleur-principale); font-size: .85em; font-weight: normal; }
-.filtres-commandes-employe { display: flex; flex-wrap: wrap; align-items: end; gap: 15px; margin: 20px 0; padding: 18px; border-radius: 8px; background: var(--couleur-fond); }
-.champ-filtre { display: flex; flex: 1; flex-direction: column; gap: 6px; min-width: 200px; }
-.champ-filtre label { color: var(--couleur-principale); font-weight: bold; }
+
+/* ==========================================================
+   13. GESTION DES EMPLOYÉS
+   ========================================================== */
+
+.page-gestion-employes {
+    background: var(--couleur-fond);
+    color: var(--couleur-texte);
+}
+
+.page-gestion-employes header {
+    padding: 24px;
+    background: var(--couleur-principale);
+    color: #FFF;
+}
+
+.page-gestion-employes header h1 {
+    margin: 0;
+}
+
+.page-gestion-employes header p {
+    margin: 8px 0 0;
+}
+
+.page-gestion-employes main.container {
+    max-width: var(--largeur-contenu);
+    margin: 30px auto;
+}
+
+.page-gestion-employes .section {
+    padding: 25px;
+    border-radius: 12px;
+    background: var(--couleur-section);
+}
+
+.page-gestion-employes .section h2 {
+    margin-top: 0;
+    color: var(--couleur-principale);
+}
+
+.page-gestion-employes .formulaire {
+    max-width: 650px;
+    margin: 20px 0 30px;
+    padding: 24px;
+    border-radius: 12px;
+    background: #FFF;
+}
+
+.page-gestion-employes .champ-formulaire input {
+    max-width: 100%;
+}
+
+.page-gestion-employes .formulaire .btn {
+    padding: 12px 18px;
+    border: 0;
+    border-radius: 6px;
+    background: var(--couleur-principale);
+    color: #FFF;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.page-gestion-employes .formulaire .btn:hover {
+    background: var(--couleur-principale-hover);
+}
+
+.page-gestion-employes .card {
+    margin: 15px 0;
+    padding: 20px;
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .06);
+}
+
+.page-gestion-employes .card h3 {
+    margin-top: 0;
+    color: var(--couleur-principale);
+}
+
+.page-gestion-employes main.container > p a {
+    color: var(--couleur-principale);
+    font-weight: bold;
+}
+
+
+/* ==========================================================
+   14. GESTION DES HORAIRES
+   ========================================================== */
+
+.page-gestion-horaires {
+    background: var(--couleur-fond);
+}
+
+.page-gestion-horaires header {
+    padding: 24px;
+    background: var(--couleur-principale);
+    color: #FFF;
+    text-align: left;
+}
+
+.page-gestion-horaires header h1 {
+    margin: 0;
+}
+
+.page-gestion-horaires header p {
+    margin: 8px 0 0;
+}
+
+.page-gestion-horaires .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.page-gestion-horaires .section {
+    margin-top: 20px;
+    padding: 25px;
+    border-radius: 10px;
+    background: var(--couleur-section);
+}
+
+.page-gestion-horaires .ligne-horaire {
+    display: grid;
+    grid-template-columns: 120px 100px minmax(0, 1fr);
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 12px;
+    padding: 15px;
+    border-radius: 8px;
+    background: #FFF;
+}
+
+.page-gestion-horaires .champs-horaires {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.page-gestion-horaires .champs-horaires div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.page-gestion-horaires input[type="time"] {
+    padding: 8px;
+    border: 1px solid #C8D8D1;
+    border-radius: 5px;
+}
+
+.page-gestion-horaires .btn {
+    padding: 10px 16px;
+    border: 0;
+    border-radius: 5px;
+    background: var(--couleur-principale);
+    color: #FFF;
+    cursor: pointer;
+}
+
+
+/* ==========================================================
+   15. ESPACE EMPLOYÉ
+   ========================================================== */
+
+.tableau-bord-employe {
+    display: flex;
+    gap: 20px;
+    margin: 25px 0;
+}
+
+.carte-statistique-employe {
+    flex: 1;
+    padding: 20px;
+    border: 1px solid var(--couleur-section);
+    border-left: 5px solid var(--couleur-principale);
+    border-radius: 8px;
+    background: #FFF;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .08);
+}
+
+.carte-statistique-employe h3 {
+    margin: 0 0 12px;
+    color: var(--couleur-principale);
+    font-size: 16px;
+}
+
+.carte-statistique-employe p {
+    margin: 0;
+    color: var(--couleur-principale);
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.bienvenue-employe {
+    display: inline;
+    margin-left: 10px;
+    color: var(--couleur-principale);
+    font-size: .85em;
+    font-weight: normal;
+}
+
+.filtres-commandes-employe {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    gap: 15px;
+    margin: 20px 0;
+    padding: 18px;
+    border-radius: 8px;
+    background: var(--couleur-fond);
+}
+
+.champ-filtre {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 200px;
+}
+
+.champ-filtre label {
+    color: var(--couleur-principale);
+    font-weight: bold;
+}
+
 .champ-filtre input,
-.champ-filtre select { width: 100%; padding: 10px; border: 1px solid #CCC; border-radius: 5px; background: #FFF; font: inherit; }
+.champ-filtre select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    background: #FFF;
+    font: inherit;
+}
+
 .filtres-commandes-employe button,
-.bouton-reinitialiser { padding: 10px 16px; border: 0; border-radius: 5px; background: var(--couleur-principale); color: #FFF; text-decoration: none; cursor: pointer; font: inherit; }
-.bouton-reinitialiser { background: #777; }
+.bouton-reinitialiser {
+    padding: 10px 16px;
+    border: 0;
+    border-radius: 5px;
+    background: var(--couleur-principale);
+    color: #FFF;
+    text-decoration: none;
+    cursor: pointer;
+    font: inherit;
+}
 
-/* 16. Pied de page */
-.pied-de-page { margin-top: 40px; padding: 30px 0; background: var(--couleur-principale); color: #FFF; }
-.pied-de-page .container { max-width: var(--largeur-contenu); margin: 0 auto; padding: 0 20px; }
-.pied-de-page h2 { margin: 0 0 20px; font-size: 1.4rem; }
-.pied-de-page .liste-horaires { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 10px 20px; margin: 0; padding: 0; list-style: none; }
-.pied-de-page .liste-horaires li { font-size: .95rem; }
+.bouton-reinitialiser {
+    background: #777;
+}
 
-/* 17. Pages légales : mentions et CGV */
-body > header { background: var(--couleur-principale); color: #FFF; }
-body > header h1 { color: #FFF; }
-body > header nav a { color: #FFF; }
-.header-container { display: flex; align-items: center; justify-content: space-between; max-width: var(--largeur-contenu); margin: 0 auto; padding: 15px 20px; }
-.header-container nav { display: flex; gap: 25px; }
-.header-container nav a { color: #FFF; text-decoration: none; }
-.legal-container { max-width: 900px; margin: 40px auto; padding: 0 20px; line-height: 1.6; }
-.legal-container h2 { margin-bottom: 25px; color: var(--couleur-principale); }
-.legal-container h3 { margin-top: 25px; color: var(--couleur-principale); }
-.legal-container p { margin-bottom: 15px; }
-.legal-container a { color: var(--couleur-principale); font-weight: 600; text-decoration: none; }
-.legal-container a:hover { text-decoration: underline; }
 
-/* 18. Page statistiques — cartes de KPI */
-.page-statistiques { min-height: 100vh; background: var(--couleur-fond); }
-.page-statistiques header { padding: 24px 0; background: var(--couleur-principale); color: #FFF; }
-.page-statistiques header .container { max-width: var(--largeur-contenu); margin: 0 auto; }
-.page-statistiques header h1 { margin: 0 0 8px; font-size: 32px; }
-.page-statistiques header p { margin: 0; }
-.page-statistiques main.container { width: 92%; max-width: var(--largeur-contenu); margin: 30px auto; padding: 0; }
-.page-statistiques .section { padding: 24px; border-radius: 8px; background: var(--couleur-section); }
-.page-statistiques h2 { margin: 0 0 20px; color: var(--couleur-principale); }
-.page-statistiques h3 { margin-bottom: 15px; }
-/* Compatibilité avec les deux noms de classe présents dans les versions de la page */
+/* ==========================================================
+   16. AVIS CLIENTS
+   ========================================================== */
+
+.section-avis {
+    width: 92%;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.section-avis h2 {
+    margin-bottom: 20px;
+    color: var(--couleur-principale);
+}
+
+.grille-avis {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    max-width: 690px;
+}
+
+.carte-avis {
+    padding: 20px;
+    border-radius: 10px;
+    background: #FFFFFF;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.carte-avis h3 {
+    color: var(--couleur-principale);
+}
+
+.note-avis {
+    color: #D6A52A;
+    font-size: 20px;
+}
+
+
+/* ==========================================================
+   17. PIED DE PAGE
+   ========================================================== */
+
+.pied-de-page {
+    margin-top: 40px;
+    padding: 30px 0;
+    background: var(--couleur-principale);
+    color: #FFF;
+}
+
+.pied-de-page .container {
+    max-width: var(--largeur-contenu);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.pied-de-page h2 {
+    margin: 0 0 20px;
+    font-size: 1.4rem;
+}
+
+.pied-de-page .liste-horaires {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.pied-de-page .liste-horaires li {
+    font-size: .95rem;
+}
+
+.pied-de-page a,
+.site-footer a {
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+
+.pied-de-page a {
+    margin-right: 10px;
+}
+
+.pied-de-page a:hover,
+.site-footer a:hover {
+    color: #E8F0EC;
+}
+
+.informations-footer {
+    margin-top: 12px;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.informations-footer p {
+    margin: 4px 0;
+}
+
+
+/* ==========================================================
+   18. PAGES LÉGALES : MENTIONS ET CGV
+   ========================================================== */
+
+body > header {
+    background: var(--couleur-principale);
+    color: #FFF;
+}
+
+body > header h1,
+body > header nav a {
+    color: #FFF;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: var(--largeur-contenu);
+    margin: 0 auto;
+    padding: 15px 20px;
+}
+
+.header-container nav {
+    display: flex;
+    gap: 25px;
+}
+
+.header-container nav a {
+    text-decoration: none;
+}
+
+.legal-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+    line-height: 1.6;
+}
+
+.legal-container h2 {
+    margin-bottom: 25px;
+    color: var(--couleur-principale);
+}
+
+.legal-container h3 {
+    margin-top: 25px;
+    color: var(--couleur-principale);
+}
+
+.legal-container p {
+    margin-bottom: 15px;
+}
+
+.legal-container a {
+    color: var(--couleur-principale);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.legal-container a:hover {
+    text-decoration: underline;
+}
+
+
+/* ==========================================================
+   19. PAGE STATISTIQUES
+   ========================================================== */
+
+.page-statistiques {
+    min-height: 100vh;
+    background: var(--couleur-fond);
+}
+
+.page-statistiques header {
+    padding: 24px 0;
+    background: var(--couleur-principale);
+    color: #FFF;
+}
+
+.page-statistiques header .container {
+    max-width: var(--largeur-contenu);
+    margin: 0 auto;
+}
+
+.page-statistiques header h1 {
+    margin: 0 0 8px;
+    font-size: 32px;
+}
+
+.page-statistiques header p {
+    margin: 0;
+}
+
+.page-statistiques main.container {
+    width: 92%;
+    max-width: var(--largeur-contenu);
+    margin: 30px auto;
+    padding: 0;
+}
+
+.page-statistiques .section {
+    padding: 24px;
+    border-radius: 8px;
+    background: var(--couleur-section);
+}
+
+.page-statistiques h2 {
+    margin: 0 0 20px;
+    color: var(--couleur-principale);
+}
+
+.page-statistiques h3 {
+    margin-bottom: 15px;
+}
+
 .page-statistiques .cartes-statistiques,
 .page-statistiques .statistiques-cartes {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0,1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 20px;
     width: 100%;
     padding: 0;
     border: 0;
     background: transparent;
 }
+
 .page-statistiques .cartes-statistiques .card,
 .page-statistiques .statistiques-cartes .card,
 .page-statistiques .cartes-statistiques .carte-statistique,
@@ -533,6 +1751,7 @@ body > header nav a { color: #FFF; }
     background: #FFF;
     box-shadow: none;
 }
+
 .page-statistiques .titre-statistique,
 .page-statistiques .cartes-statistiques .card h3,
 .page-statistiques .statistiques-cartes .card h3 {
@@ -541,6 +1760,7 @@ body > header nav a { color: #FFF; }
     font-size: 16px;
     overflow-wrap: anywhere;
 }
+
 .page-statistiques .valeur-statistique,
 .page-statistiques .cartes-statistiques .card .valeur-statistique,
 .page-statistiques .statistiques-cartes .card .valeur-statistique,
@@ -555,150 +1775,6 @@ body > header nav a { color: #FFF; }
     word-break: normal;
 }
 
-/* 19. Responsive global */
-@media (max-width: 900px) {
-    .grille-menus,
-    .page-gestion-menus .grille-menus-admin { grid-template-columns: repeat(2,minmax(0,1fr)); }
-    .entete-accueil { flex-direction: column; align-items: flex-start; }
-    .navigation-principale { flex-wrap: wrap; gap: 20px; }
-    .section-accueil { gap: 24px; }
-    .texte-accueil h2 { font-size: 1.6rem; }
-}
-@media (max-width: 768px) {
-    .statistiques-utilisateur { grid-template-columns: 1fr; }
-    .commande-utilisateur,
-    .carte-commande { padding: 14px; }
-    .page-statistiques main.container { margin: 15px auto; }
-    .page-statistiques .cartes-statistiques,
-    .page-statistiques .statistiques-cartes { grid-template-columns: 1fr; }
-}
-@media (max-width: 750px) {
-    .composition-menu { grid-template-columns: 1fr; }
-}
-@media (max-width: 700px) {
-   .espace-utilisateur {
-    grid-template-columns: minmax(0, 1fr);
-}
-
-.menu-utilisateur,
-.contenu-utilisateur {
-    min-width: 0;
-    width: 100%;
-    box-sizing: border-box;
-}
-    .entete-utilisateur { flex-direction: column; align-items: flex-start; }
-    .pied-de-page .liste-horaires { grid-template-columns: repeat(2,minmax(0,1fr)); }
-    .page-gestion-horaires .ligne-horaire { grid-template-columns: 1fr; }
-    .page-administrateur .navigation-admin { flex-direction: column; }
-    .page-administrateur .navigation-admin .btn { text-align: center; }
-}
-@media (max-width: 600px) {
-    .container,
-    .contenu-principal {
-        width: 94%;
-    }
-
-    .grille-menus,
-    .page-gestion-menus .grille-menus-admin {
-        grid-template-columns: 1fr;
-    }
-
-    .filtres-menus {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .filtres-menus select,
-    .filtres-menus input[type="search"],
-    .filtres-menus .bouton {
-        width: 100%;
-    }
-
-    .section-accueil {
-        grid-template-columns: 1fr;
-        padding: 24px 0 40px;
-    }
-
-    .texte-accueil p {
-        margin-bottom: 24px;
-    }
-
-    .image-accueil img {
-        height: 220px;
-    }
-
-    .navigation-principale {
-        gap: 14px;
-    }
-
-    .image-menu-detail {
-        height: 220px;
-    }
-
-    .suivi-commande {
-        margin: 20px 12px;
-        padding: 18px;
-    }
-
-    .etape-suivi,
-    .tableau-bord-employe {
-        flex-direction: column;
-    }
-
-    .filtres-commandes-employe {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    /* En-tête sur petit écran */
-    .site-header .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 12px;
-    }
-
-    .site-header h1 {
-        font-size: 1.6rem;
-        text-align: center;
-    }
-
-    .site-header nav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 12px;
-    }
-
-    .site-header .entete-accueil {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-}
-
-.site-header h1 {
-    font-size: 1.6rem;
-    text-align: center;
-    margin: 0;
-}
-
-.site-header .navigation-principale {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
-}
-
-.site-header .navigation-principale a {
-    white-space: normal;
-    font-size: 12px;
-}
-}
-
-/* Lien retour à l'espace administrateur - Statistiques */
 .page-statistiques main > p a {
     color: var(--couleur-principale);
     font-weight: bold;
@@ -706,162 +1782,27 @@ body > header nav a { color: #FFF; }
 }
 
 .page-statistiques main > p a:hover {
-    color: #24483E;
+    color: var(--couleur-principale-hover);
     text-decoration: underline;
 }
 
-/* Liens du pied de page */
-.site-footer a {
-    color: #FFFFFF;
-    text-decoration: underline;
-}
 
-.site-footer a:hover {
-    color: #E8F0EC;
-}
+/* ==========================================================
+   20. PAGE MOT DE PASSE OUBLIÉ
+   ========================================================== */
 
-/* Liens du pied de page */
-.pied-de-page a {
-    color: #FFFFFF;
-    text-decoration: underline;
-}
-
-.pied-de-page a:hover {
-    color: #E8F0EC;
-}
-
-.pied-de-page a {
-    margin-right: 10px;
-}
-
-button.lien-annulation {
-    appearance: none;
-    background: none;
-    border: none;
-    box-shadow: none;
-    color: #2F5D50;
-    text-decoration: underline;
-    cursor: pointer;
-    padding: 0;
-    margin: 8px 0;
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-}
-
-button.lien-annulation:hover {
-    color: #1E4037;
-    text-decoration: none;
-}
-
-@media screen and (max-width: 768px) {
-
-    .actions-suivi {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-        margin-top: 20px;
-        padding-left: 10px;
-    }
-
-    .actions-suivi .bouton {
-        display: inline-block;
-        width: auto;
-        margin: 0;
-    }
-}
-
-.bouton-deconnexion {
-    display: inline-block;
-    background-color: #2F5D50;
-    color: #FFFFFF;
-    padding: 10px 18px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.bouton-deconnexion:hover {
-    background-color: #24483E;
-    color: #FFFFFF;
-}
-@media screen and (max-width: 600px) {
-    .bouton-deconnexion {
-        padding: 8px 14px;
-        font-size: 14px;
-    }
-}
-
-.btn-retour-admin {
-    display: inline-block;
-    background-color: #2F5D50;
-    color: white !important;
-    padding: 10px 16px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.btn-retour-admin:hover {
-    background-color: #24483E;
-    color: white !important;
-}
-
-/* Section des avis clients */
-.section-avis {
-    max-width: 690px;
-    margin: 40px auto;
-}
-
-.section-avis h2 {
-    color: #2F5D50;
-    margin-bottom: 20px;
-}
-
-.grille-avis {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 15px;
-}
-
-.carte-avis {
-    background-color: #FFFFFF;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-}
-
-.carte-avis h3 {
-    color: #2F5D50;
-}
-
-.note-avis {
-    color: #D6A52A;
-    font-size: 20px;
-}
-
-a {
-    color: #2F5D50;
-}
-
-a:hover {
-    color: #1E4037;
-}
-
-/* Page mot de passe oublié */
 .page-mot-de-passe {
     max-width: 650px;
     margin: 40px auto;
     padding: 30px;
-    background: #FFFFFF;
     border-radius: 12px;
+    background: #FFFFFF;
     box-shadow: var(--ombre-carte);
 }
 
 .page-mot-de-passe h2 {
-    color: var(--couleur-principale);
     margin-top: 0;
+    color: var(--couleur-principale);
 }
 
 .page-mot-de-passe p {
@@ -877,8 +1818,8 @@ a:hover {
 
 .page-mot-de-passe input[type="email"] {
     width: 100%;
-    padding: 12px;
     margin-bottom: 20px;
+    padding: 12px;
     border: 1px solid #C8D5CE;
     border-radius: 6px;
     font: inherit;
@@ -906,52 +1847,380 @@ a:hover {
     text-decoration: none;
 }
 
-/* Menu déroulant administrateur sur mobile */
-.bouton-menu-admin {
-    display: none;
+
+/* ==========================================================
+   21. RÈGLES GÉNÉRALES DES LIENS
+   ========================================================== */
+
+a {
+    color: var(--couleur-principale);
 }
 
+a:hover {
+    color: #1E4037;
+}
+
+
+/* ==========================================================
+   22. MENU HAMBURGER ET RESPONSIVE GLOBAL
+   ========================================================== */
+
+.menu-hamburger {
+    display: none;
+    padding: 5px;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+
+/* ==========================================================
+   23. RESPONSIVE : TABLETTES
+   ========================================================== */
+
+@media (max-width: 900px) {
+
+    .grille-menus,
+    .page-gestion-menus .grille-menus-admin {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .entete-accueil {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navigation-principale {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .section-accueil {
+        gap: 24px;
+    }
+
+    .texte-accueil h2 {
+        font-size: 1.6rem;
+    }
+}
+
+
+/* ==========================================================
+   24. RESPONSIVE : TABLETTES ET PETITS ÉCRANS
+   ========================================================== */
+
+@media (max-width: 768px) {
+
+    .statistiques-utilisateur {
+        grid-template-columns: 1fr;
+    }
+
+    .commande-utilisateur,
+    .carte-commande {
+        padding: 14px;
+    }
+
+    .page-statistiques main.container {
+        margin: 15px auto;
+    }
+
+    .page-statistiques .cartes-statistiques,
+    .page-statistiques .statistiques-cartes {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-hamburger {
+        display: block;
+    }
+
+    .navigation-principale {
+        display: none;
+    }
+
+    .actions-suivi {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        margin-top: 20px;
+        padding-left: 10px;
+    }
+
+    .actions-suivi .bouton {
+        display: inline-block;
+        width: auto;
+        margin: 0;
+    }
+}
+
+
+/* ==========================================================
+   25. RESPONSIVE : COMPOSITION DES MENUS
+   ========================================================== */
+
+@media (max-width: 750px) {
+
+    .composition-menu {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ==========================================================
+   26. RESPONSIVE : ESPACES UTILISATEUR ET ADMINISTRATEUR
+   ========================================================== */
+
+@media (max-width: 700px) {
+
+    .espace-utilisateur {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .menu-utilisateur,
+    .contenu-utilisateur {
+        min-width: 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .entete-utilisateur {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .pied-de-page .liste-horaires {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .page-gestion-horaires .ligne-horaire {
+        grid-template-columns: 1fr;
+    }
+
+    .page-administrateur .navigation-admin {
+        flex-direction: column;
+    }
+
+    .page-administrateur .navigation-admin .btn {
+        text-align: center;
+    }
+}
+
+
+/* ==========================================================
+   27. RESPONSIVE : TÉLÉPHONES
+   ========================================================== */
+
 @media (max-width: 600px) {
+
+    .container,
+    .contenu-principal {
+        width: 94%;
+    }
+
+    .grille-menus,
+    .page-gestion-menus .grille-menus-admin {
+        grid-template-columns: 1fr;
+    }
+
+    .filtres-menus {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filtres-menus select,
+    .filtres-menus input[type="search"],
+    .filtres-menus .bouton {
+        width: 100%;
+    }
+
+   .section-accueil {
+    grid-template-columns: 1fr;
+    padding: 24px 0 40px;
+}
+
+.texte-accueil h2 {
+    font-size: 1.6rem;
+}
+
+.texte-accueil p {
+    margin-bottom: 24px;
+    line-height: 1.6;
+}
+
+.texte-accueil .bouton {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.image-accueil img {
+    height: 220px;
+}
+
+    .navigation-principale {
+        gap: 14px;
+    }
+
+    .image-menu-detail {
+        height: 220px;
+    }
+
+    .suivi-commande {
+        margin: 20px 12px;
+        padding: 18px;
+    }
+
+    .etape-suivi,
+    .tableau-bord-employe {
+        flex-direction: column;
+    }
+
+    .filtres-commandes-employe {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .site-header .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .site-header h1 {
+        margin: 0;
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    .site-header nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .site-header .entete-accueil {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .site-header .navigation-principale {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        width: 100%;
+    }
+
+    .site-header .navigation-principale a {
+        white-space: nowrap;
+        font-size: 10px;
+    }
+
+    .bouton-deconnexion {
+        padding: 8px 14px;
+        font-size: 14px;
+    }
 
     .bouton-menu-admin {
         display: block;
         width: 100%;
         padding: 12px 16px;
-        background: var(--couleur-principale);
-        color: #FFFFFF;
         border: none;
         border-radius: 6px;
+        background: var(--couleur-principale);
+        color: #FFFFFF;
         font-size: 16px;
         font-weight: bold;
         text-align: left;
         cursor: pointer;
     }
 
-    .navigation-admin {
+    .page-administrateur .navigation-admin {
         display: none;
         flex-direction: column;
         gap: 8px;
         margin-top: 8px;
     }
 
-    .navigation-admin.ouvert {
+    .page-administrateur .navigation-admin.ouvert {
         display: flex;
     }
 
-    .navigation-admin a {
+    .page-administrateur .navigation-admin a {
         display: block;
         width: 100%;
         box-sizing: border-box;
         text-align: left;
     }
-}
 
-/* Espacement des boutons sur téléphone uniquement */
-@media screen and (max-width: 600px) {
     .actions-menu {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         gap: 12px;
+    }
+
+    .section-contact {
+        margin: 20px auto;
+        padding: 25px 18px;
+    }
+
+    .formulaire-contact {
+        padding: 20px;
+    }
+
+    .page-mot-de-passe {
+        width: 94%;
+        margin: 25px auto;
+        padding: 22px;
+    }
+
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .header-container nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .page-gestion-menus .entete-gestion {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+ /* MENU HAMBURGER - VERSION MOBILE */
+
+@media (max-width: 600px) {
+
+    /* Afficher le bouton hamburger */
+    .site-header .menu-hamburger {
+    display: block;
+    align-self: flex-start;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+    /* Masquer les liens par défaut */
+    .site-header .navigation-principale {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 15px;
+    }
+
+    /* Afficher les liens lorsque le menu est ouvert */
+    .site-header .navigation-principale.ouvert {
+        display: flex;
     }
 }

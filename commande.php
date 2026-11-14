@@ -227,11 +227,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Passer commande - Vite & Gourmand</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
 
     <header class="site-header">
-        <h1>Vite & Gourmand</h1>
+       <img
+    src="images/logo-vite-et-gourmand.png"
+    alt="Vite & Gourmand - Traiteur"
+    class="logo-site"
+> 
     </header>
 
     <main class="contenu-principal">

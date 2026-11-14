@@ -82,14 +82,27 @@ $statutsCommandes = $pdo->query($sqlStatuts)->fetchAll(PDO::FETCH_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Statistiques - Vite & Gourmand</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 
 <body class="page-statistiques">
 
-<header>
+<header class="entete-administrateur">
     <div class="container">
-        <h1>Statistiques</h1>
-        <p>Tableau de bord de l'activité</p>
+
+        <a href="index.php" aria-label="Retour à l'accueil">
+            <img
+                src="images/logo-vite-et-gourmand.png"
+                alt="Vite & Gourmand - Traiteur"
+                class="logo-site"
+            >
+        </a>
+
+        <div class="informations-administrateur">
+            <h1>Statistiques</h1>
+            <p>Tableau de bord de l'activité</p>
+        </div>
+
     </div>
 </header>
 

@@ -104,12 +104,22 @@ $plats = $stmtPlats->fetchAll(PDO::FETCH_ASSOC);
     <title>Gestion des plats - Vite & Gourmand</title>
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 
 <body class="page-gestion-menus">
 
-<header>
+<header class="entete-administrateur">
     <div class="container">
+
+        <a href="index.php" aria-label="Retour à l'accueil">
+            <img
+                src="images/logo-vite-et-gourmand.png"
+                alt="Vite & Gourmand - Traiteur"
+                class="logo-site"
+            >
+        </a>
+     <div class="informations-administrateur">
         <h1>Gestion des plats</h1>
         <p>Ajouter, consulter et modifier les plats proposés</p>
     </div>

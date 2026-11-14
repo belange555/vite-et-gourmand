@@ -2,9 +2,9 @@
 
 require_once 'config/database.php';
 
-$idMenu = $_GET['id'] ?? null;
+$idMenu = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 
-if (!$idMenu) {
+if (!$idMenu || $idMenu <= 0) {
     die("Menu introuvable.");
 }
 
@@ -66,13 +66,22 @@ $plats = $requetePlats->fetchAll(PDO::FETCH_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= htmlspecialchars($menu['titre']) ?></title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 
 <body>
 
    <header class="site-header">
-        <h1>Vite & Gourmand</h1>
-    </header>
+    <div class="container">
+        <a href="index.php" aria-label="Retour à l'accueil">
+            <img
+                src="images/logo-vite-et-gourmand.png"
+                alt="Vite & Gourmand - Traiteur"
+                class="logo-site"
+            >
+        </a>
+    </div>
+</header>
 
     <main class="contenu-principal">
         <article class="carte-menu">

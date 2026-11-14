@@ -361,13 +361,18 @@ $nombreAvisEnAttente = count($avisEnAttente);
     <title>Espace employé - Vite &amp; Gourmand</title>
 
     <link rel="stylesheet" href="css/style.css">
+   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 
 <body>
 
-<header class="site-header">
+<header class="site-header entete-employe">
 
-    <h1>Vite &amp; Gourmand</h1>
+   <img
+    src="images/logo-vite-et-gourmand.png"
+    alt="Vite & Gourmand - Traiteur"
+    class="logo-site"
+>
 
     <div class="bienvenue-header">
         <span aria-hidden="true">♙</span>

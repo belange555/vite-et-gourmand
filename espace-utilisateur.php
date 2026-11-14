@@ -298,6 +298,7 @@ $prenomUtilisateur = $_SESSION['prenom'] ?? '';
     <title>Mon espace utilisateur - Vite &amp; Gourmand</title>
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
 </head>
 
@@ -307,7 +308,11 @@ $prenomUtilisateur = $_SESSION['prenom'] ?? '';
 
     <div class="entete-utilisateur">
 
-        <h1>Vite &amp; Gourmand</h1>
+        <img
+            src="images/logo-vite-et-gourmand.png"
+            alt="Vite & Gourmand - Traiteur"
+            class="logo-site"
+        >
 
         <div class="profil-utilisateur">
             Bienvenue dans votre espace,

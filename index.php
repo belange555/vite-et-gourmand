@@ -67,21 +67,31 @@ $avisClients = $requeteAvis->fetchAll(PDO::FETCH_ASSOC);
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <head>
     <meta name="google-site-verification" content="SgXJpX9Qx-sVOaARZ5_YxnUnEf2iHgNrUbvt_Ty6i4Y" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vite & Gourmand</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 
 <body>
 
     <header class="site-header">
         <div class="entete-accueil">
-            <h1>Vite & Gourmand</h1>
+           <h1>
+    <img src="images/logo-vite-et-gourmand.png"
+         alt="Vite & Gourmand - Traiteur">
+</h1>
 
-            <nav class="navigation-principale">
+<button class="menu-hamburger" id="menuHamburger"
+        aria-label="Ouvrir le menu"
+        aria-expanded="false"
+        aria-controls="navigationPrincipale">
+    ☰
+</button>
+
+            <nav class="navigation-principale" id="navigationPrincipale">
                 <a href="index.php">Accueil</a>
                 <a href="nos-menus.php">Nos menus</a>
                 <a href="contact.php">Contact</a>
@@ -117,8 +127,7 @@ $avisClients = $requeteAvis->fetchAll(PDO::FETCH_ASSOC);
                 <h2>Une cuisine gourmande pour vos événements</h2>
 
                 <p>
-                    Des menus savoureux pour vos moments
-                    en famille, entre amis ou entre collègues.
+                    Depuis plus de 25 ans, notre expérience et notre savoir-faire donnent vie à des menus savoureux, préparés avec soin pour accompagner vos moments en famille, entre amis ou entre collègues.
                 </p>
 
                <a class="bouton" href="nos-menus.php">
@@ -219,38 +228,67 @@ $avisClients = $requeteAvis->fetchAll(PDO::FETCH_ASSOC);
 
     <?php endif; ?>
 </section>
-    <footer class="pied-de-page">
-        <div class="container">
-            <h2>Nos horaires d'ouverture</h2>
+    
+<footer class="pied-de-page">
+    <div class="container">
+        <h2>Nos horaires d'ouverture</h2>
 
-            <ul class="liste-horaires">
-                <?php foreach ($horaires as $horaire) : ?>
-                    <li>
-                        <strong>
-                            <?= htmlspecialchars($nomsJours[(int) $horaire['jour']]) ?>
-                        </strong>
+        <ul class="liste-horaires">
+            <?php foreach ($horaires as $horaire) : ?>
+                <li>
+                    <strong>
+                        <?= htmlspecialchars($nomsJours[(int) $horaire['jour']]) ?>
+                    </strong>
 
-                        <?php if (
-                            !empty($horaire['heure_ouverture']) &&
-                            !empty($horaire['heure_fermeture'])
-                        ) : ?>
-                            :
-                            <?= substr($horaire['heure_ouverture'], 0, 5) ?>
-                            -
-                            <?= substr($horaire['heure_fermeture'], 0, 5) ?>
-                        <?php else : ?>
-                            : Fermé
-                        <?php endif; ?>
-                    </li>
-                <?php endforeach; ?>
-                       </ul>
+                    <?php if (
+                        !empty($horaire['heure_ouverture']) &&
+                        !empty($horaire['heure_fermeture'])
+                    ) : ?>
+                        :
+                        <?= substr($horaire['heure_ouverture'], 0, 5) ?>
+                        -
+                        <?= substr($horaire['heure_fermeture'], 0, 5) ?>
+                    <?php else : ?>
+                        : Fermé
+                    <?php endif; ?>
+                </li>
+            <?php endforeach; ?>
+        </ul>
 
-            <div class="liens-legaux">
-                <a href="mentions-legales.php">Mentions légales</a>
-                <a href="cgv.php">Conditions générales de vente</a>
-            </div>
+        <div class="informations-footer">
+            <p>
+                <span aria-hidden="true">📍</span>
+                12 rue des gourmets, 33000 Bordeaux
+            </p>
+
+            <p>
+                Entreprise fictive – Projet pédagogique de fin d'études.
+            </p>
         </div>
-    </footer>
 
+        <div class="liens-legaux">
+            <a href="mentions-legales.php">Mentions légales</a>
+            <a href="cgv.php">Conditions générales de vente</a>
+        </div>
+    </div>
+</footer>
+<script>
+    const boutonMenu = document.querySelector('#menuHamburger');
+    const navigation = document.querySelector('#navigationPrincipale');
+
+    boutonMenu.addEventListener('click', function () {
+
+        navigation.classList.toggle('ouvert');
+
+        const menuOuvert = navigation.classList.contains('ouvert');
+
+        boutonMenu.setAttribute('aria-expanded', menuOuvert);
+
+        boutonMenu.setAttribute(
+            'aria-label',
+            menuOuvert ? 'Fermer le menu' : 'Ouvrir le menu'
+        );
+    });
+</script>
 </body>
 </html>
