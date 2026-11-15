@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Mentions légales - Vite & Gourmand</title>
-
+    <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" href="images/favicon-vite-et-gourmand.png">
 </head>
 
@@ -18,7 +18,7 @@
     src="images/logo-vite-et-gourmand.png"
     alt="Vite & Gourmand - Traiteur"
     class="logo-site"
-
+>
         <nav>
             <a href="index.php">Accueil</a>
             <a href="index.php#nos-menus">Nos menus</a>
