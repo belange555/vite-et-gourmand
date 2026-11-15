@@ -187,7 +187,7 @@ $historique = $stmtHistorique->fetchAll(PDO::FETCH_ASSOC);
     </div>
 </header>
 
-<main class="contenu-utilisateur">
+<main class="contenu-utilisateur page-suivi-commande">
 
     <div class="layout-utilisateur">
 

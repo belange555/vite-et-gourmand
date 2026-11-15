@@ -2224,3 +2224,20 @@ a:hover {
         display: flex;
     }
 }
+/* CENTRAGE DE LA PAGE SUIVI DE COMMANDE */
+
+.page-suivi-commande {
+    padding: 40px 20px;
+}
+
+.page-suivi-commande .layout-utilisateur {
+    display: block;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.page-suivi-commande .contenu-section {
+    width: 100%;
+    box-sizing: border-box;
+}
