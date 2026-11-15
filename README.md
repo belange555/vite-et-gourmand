@@ -97,7 +97,19 @@ Le site est hébergé sur Heroku.
 
 Le code source est stocké sur GitHub. Le déploiement automatique est activé sur la branche `main` : chaque mise à jour envoyée sur cette branche déclenche un nouveau déploiement sur Heroku.
 
-## 8. Sécurité
+## 8. Gestion des versions avec Git
+
+Le projet utilise Git pour suivre les modifications du code.
+
+L'organisation des branches prévue est la suivante :
+
+- `main` : branche principale contenant la version stable.
+- `develop` : branche de développement regroupant les fonctionnalités testées.
+- Branches fonctionnelles : créées depuis `develop` pour travailler sur chaque fonctionnalité.
+
+Après les tests, les fonctionnalités sont fusionnées dans `develop`, puis la version validée est fusionnée dans `main`.
+
+## 9. Sécurité
 
 Le projet intègre plusieurs mesures de sécurité :
 
@@ -106,7 +118,7 @@ Le projet intègre plusieurs mesures de sécurité :
 - Gestion des accès selon les rôles des utilisateurs.
 - Protection de l'affichage des données avec `htmlspecialchars()`.
 
-## 9. Auteur et cadre du projet
+## 10. Auteur et cadre du projet
 
 Projet réalisé dans le cadre d'un ECF de formation en développement web.
 
