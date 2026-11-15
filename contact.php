@@ -55,6 +55,7 @@ if (empty($erreurs)) {
     <title>Contact - Vite & Gourmand</title>
 
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
     <link rel="icon" type="image/png" href="images/favicon-vite-et-gourmand.png">
 </head>
 
@@ -68,6 +69,14 @@ if (empty($erreurs)) {
     alt="Vite & Gourmand - Traiteur"
     class="logo-site"
 >
+<button
+    type="button"
+    class="menu-hamburger"
+    aria-label="Ouvrir le menu"
+    aria-expanded="false"
+>
+    ☰ Menu
+</button>
 
         <nav class="navigation-principale">
             <a href="index.php">Accueil</a>

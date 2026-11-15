@@ -428,44 +428,50 @@ $nombreAvisEnAttente = count($avisEnAttente);
     <?php endif; ?>
 
     <!-- Commandes récentes -->
-    <section class="carte-menu">
+    <section class="section-employe">
 
-        <h3>Commandes récentes</h3>
+    <h3>Commandes récentes</h3>
 
-        <?php if (!empty($commandesRecentes)) : ?>
+    <?php if (!empty($commandesRecentes)) : ?>
 
-            <?php foreach ($commandesRecentes as $commande) : ?>
+    <div class="grille-commandes-employe">
 
-                <article class="carte-menu">
+        <?php foreach ($commandesRecentes as $commande) : ?>
 
-                    <h4>
-                        Commande n° <?= (int) $commande['id_commande'] ?>
-                    </h4>
+            <article class="commande-employe">
 
-                    <p>
-                        <strong>Client :</strong>
-                        <?= htmlspecialchars($commande['prenom'] . ' ' . $commande['nom']) ?>
-                    </p>
+                <h4>
+                    Commande n° <?= (int) $commande['id_commande'] ?>
+                </h4>
 
-                    <p>
-                        <strong>Date de prestation :</strong>
-                        <?= date('d/m/Y', strtotime($commande['date_prestation'])) ?>
-                    </p>
+                <p>
+                    <strong>Client :</strong>
+                    <?= htmlspecialchars($commande['prenom'] . ' ' . $commande['nom']) ?>
+                </p>
 
-                    <p>
-                        <strong>Statut :</strong>
-                        <?= htmlspecialchars($commande['statut'] ?? 'Non défini') ?>
-                    </p>
+                <p>
+                    <strong>Date de prestation :</strong>
+                    <?= date('d/m/Y', strtotime($commande['date_prestation'])) ?>
+                </p>
 
-                </article>
+                <p>
+                    <strong>Statut :</strong>
+                    <?= htmlspecialchars($commande['statut'] ?? 'Non défini') ?>
+                </p>
 
-            <?php endforeach; ?>
+            </article>
 
-        <?php else : ?>
+        <?php endforeach; ?>
 
-            <p>Aucune commande récente.</p>
+    </div>
 
-        <?php endif; ?>
+<?php else : ?>
+
+    <p>Aucune commande récente.</p>
+
+<?php endif; ?>
+
+       
 
     </section>
 
@@ -522,150 +528,138 @@ $nombreAvisEnAttente = count($avisEnAttente);
 
         </form>
 
-        <!-- Liste des commandes -->
-        <?php if (!empty($commandes)) : ?>
+        
+<!-- Liste des commandes -->
+<?php if (!empty($commandes)) : ?>
 
-            <?php foreach ($commandes as $commande) : ?>
+    <div class="grille-commandes-employe">
 
-                <article class="carte-menu">
+        <?php foreach ($commandes as $commande) : ?>
 
-                    <h4>
-                        Commande n° <?= (int) $commande['id_commande'] ?>
-                    </h4>
+            <article class="carte-menu">
 
+                <h4>
+                    Commande n° <?= (int) $commande['id_commande'] ?>
+                </h4>
+
+                <p>
+                    <strong>Client :</strong>
+                    <?= htmlspecialchars($commande['prenom'] . ' ' . $commande['nom']) ?>
+                </p>
+
+                <p>
+                    <strong>Email :</strong>
+                    <?= htmlspecialchars($commande['email']) ?>
+                </p>
+
+                <p>
+                    <strong>Date de prestation :</strong>
+                    <?= date('d/m/Y', strtotime($commande['date_prestation'])) ?>
+                </p>
+
+                <p>
+                    <strong>Heure :</strong>
+                    <?= htmlspecialchars($commande['heure_prestation']) ?>
+                </p>
+
+                <p>
+                    <strong>Réception :</strong>
+                    <?= htmlspecialchars($commande['lieu_livraison']) ?>
+                </p>
+
+                <?php if (!empty($commande['adresse_livraison'])) : ?>
                     <p>
-                        <strong>Client :</strong>
-                        <?= htmlspecialchars($commande['prenom'] . ' ' . $commande['nom']) ?>
+                        <strong>Adresse :</strong>
+                        <?= htmlspecialchars($commande['adresse_livraison']) ?>
                     </p>
+                <?php endif; ?>
 
-                    <p>
-                        <strong>Email :</strong>
-                        <?= htmlspecialchars($commande['email']) ?>
-                    </p>
+                <p>
+                    <strong>Menu :</strong>
+                    <?= htmlspecialchars($commande['details_menu'] ?? 'Non renseigné') ?>
+                </p>
 
-                    <p>
-                        <strong>Date de prestation :</strong>
-                        <?= date('d/m/Y', strtotime($commande['date_prestation'])) ?>
-                    </p>
+                <p>
+                    <strong>Instructions :</strong>
+                    <?= nl2br(htmlspecialchars($commande['instructions'] ?? 'Aucune')) ?>
+                </p>
 
-                    <p>
-                        <strong>Heure :</strong>
-                        <?= htmlspecialchars($commande['heure_prestation']) ?>
-                    </p>
+                <p>
+                    <strong>Montant :</strong>
+                    <?= number_format((float) $commande['prix_total'], 2, ',', ' ') ?> €
+                </p>
 
-                    <p>
-                        <strong>Réception :</strong>
-                        <?= htmlspecialchars($commande['lieu_livraison']) ?>
-                    </p>
+                <p>
+                    <strong>Statut actuel :</strong>
+                    <?= htmlspecialchars($commande['statut'] ?? 'Non défini') ?>
+                </p>
 
-                    <?php if (!empty($commande['adresse_livraison'])) : ?>
+                <?php $statutActuel = (int) ($commande['id_statut'] ?? 0); ?>
 
-                        <p>
-                            <strong>Adresse :</strong>
-                            <?= htmlspecialchars($commande['adresse_livraison']) ?>
-                        </p>
+                <?php if (in_array($statutActuel, [1, 2, 3, 4], true)) : ?>
 
-                    <?php endif; ?>
+                    <form action="espace-employe.php" method="POST">
 
-                    <p>
-                        <strong>Menu :</strong>
-                        <?= htmlspecialchars($commande['details_menu'] ?? 'Non renseigné') ?>
-                    </p>
+                        <input type="hidden" name="action" value="changer_statut">
 
-                    <p>
-                        <strong>Instructions :</strong>
-                        <?= nl2br(htmlspecialchars($commande['instructions'] ?? 'Aucune')) ?>
-                    </p>
+                        <input
+                            type="hidden"
+                            name="csrf_token"
+                            value="<?= htmlspecialchars($_SESSION['csrf_token']) ?>"
+                        >
 
-                    <p>
-                        <strong>Montant :</strong>
-                        <?= number_format((float) $commande['prix_total'], 2, ',', ' ') ?> €
-                    </p>
+                        <input
+                            type="hidden"
+                            name="id_commande"
+                            value="<?= (int) $commande['id_commande'] ?>"
+                        >
 
-                    <p>
-                        <strong>Statut actuel :</strong>
-                        <?= htmlspecialchars($commande['statut'] ?? 'Non défini') ?>
-                    </p>
+                        <div class="champ-formulaire">
+                            <label for="statut-<?= (int) $commande['id_commande'] ?>">
+                                Modifier le statut :
+                            </label>
 
-                    <?php
-                    $statutActuel = (int) ($commande['id_statut'] ?? 0);
-                    ?>
-
-                    <?php if (in_array($statutActuel, [1, 2, 3, 4], true)) : ?>
-
-                        <!-- FORMULAIRE DE CHANGEMENT DE STATUT -->
-                        <form action="espace-employe.php" method="POST">
-
-                            <input
-                                type="hidden"
-                                name="action"
-                                value="changer_statut"
+                            <select
+                                id="statut-<?= (int) $commande['id_commande'] ?>"
+                                name="id_statut"
+                                required
                             >
+                                <option value="">Choisir un statut</option>
 
-                            <input
-                                type="hidden"
-                                name="csrf_token"
-                                value="<?= htmlspecialchars($_SESSION['csrf_token']) ?>"
-                            >
+                                <?php foreach ($statuts as $statut) : ?>
+                                    <option value="<?= (int) $statut['id_statut'] ?>">
+                                        <?= htmlspecialchars($statut['libelle']) ?>
+                                    </option>
+                                <?php endforeach; ?>
 
-                            <input
-                                type="hidden"
-                                name="id_commande"
-                                value="<?= (int) $commande['id_commande'] ?>"
-                            >
+                            </select>
+                        </div>
 
-                            <div class="champ-formulaire">
+                        <button type="submit" class="bouton">
+                            Enregistrer le statut
+                        </button>
 
-                                <label for="statut-<?= (int) $commande['id_commande'] ?>">
-                                    Modifier le statut :
-                                </label>
+                    </form>
 
-                                <select
-                                    id="statut-<?= (int) $commande['id_commande'] ?>"
-                                    name="id_statut"
-                                    required
-                                >
+                <?php else : ?>
 
-                                    <option value="">Choisir un statut</option>
+                    <p>
+                        <em>Cette commande n'est pas modifiable par l'employé.</em>
+                    </p>
 
-                                    <?php foreach ($statuts as $statut) : ?>
+                <?php endif; ?>
 
-                                        <option value="<?= (int) $statut['id_statut'] ?>">
-                                            <?= htmlspecialchars($statut['libelle']) ?>
-                                        </option>
+            </article>
 
-                                    <?php endforeach; ?>
+        <?php endforeach; ?>
 
-                                </select>
+    </div>
 
-                            </div>
+<?php else : ?>
 
-                            <button type="submit" class="bouton">
-                                Enregistrer le statut
-                            </button>
+    <p>Aucune commande enregistrée pour le moment.</p>
 
-                        </form>
-                        <!-- FIN DU FORMULAIRE DE CHANGEMENT DE STATUT -->
-
-                    <?php else : ?>
-
-                        <p>
-                            <em>
-                                Cette commande n'est pas modifiable par l'employé.
-                            </em>
-                        </p>
-
-                    <?php endif; ?>
-
-                </article>
-
-            <?php endforeach; ?>
-
-        <?php else : ?>
-
-            <p>Aucune commande enregistrée pour le moment.</p>
-
-        <?php endif; ?>
+<?php endif; ?>
 
     </section>
 

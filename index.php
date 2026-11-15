@@ -143,6 +143,34 @@ $avisClients = $requeteAvis->fetchAll(PDO::FETCH_ASSOC);
             </div>
         </section>
 
+<section class="presentation-entreprise">
+
+    <article class="carte-presentation">
+        <div class="icone-presentation" aria-hidden="true">🏆</div>
+
+        <h2>25 ans d'expérience</h2>
+
+        <p>
+            Vite & Gourmand accompagne
+            les particuliers et les professionnels dans
+            l'organisation de leurs événements.
+        </p>
+    </article>
+
+    <article class="carte-presentation">
+        <div class="icone-presentation" aria-hidden="true">👥</div>
+
+        <h2>Une équipe à votre écoute, un service adapté à vos besoins</h2>
+
+        <p>
+            Notre équipe veille à la préparation des commandes,
+            à la qualité du service et au respect des règles
+            d'hygiène pour répondre aux attentes de nos clients.
+        </p>
+    </article>
+
+</section>
+
         <section id="nos-menus" class="section-nos-menus">
             <h2>Nos menus</h2>
 

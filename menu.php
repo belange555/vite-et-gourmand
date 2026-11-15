@@ -66,13 +66,16 @@ $plats = $requetePlats->fetchAll(PDO::FETCH_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= htmlspecialchars($menu['titre']) ?></title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
     <link rel="icon" type="image/png" href="images/favicon-vite-et-gourmand.png">
 </head>
 
 <body>
 
    <header class="site-header">
-    <div class="container">
+
+    <div class="entete-accueil">
+
         <a href="index.php" aria-label="Retour à l'accueil">
             <img
                 src="images/logo-vite-et-gourmand.png"
@@ -80,7 +83,25 @@ $plats = $requetePlats->fetchAll(PDO::FETCH_ASSOC);
                 class="logo-site"
             >
         </a>
+
+        <button
+            type="button"
+            class="menu-hamburger"
+            aria-label="Ouvrir le menu"
+            aria-expanded="false"
+        >
+            ☰ Menu
+        </button>
+
+        <nav class="navigation-principale">
+            <a href="index.php">Accueil</a>
+            <a href="nos-menus.php">Nos menus</a>
+            <a href="contact.php">Contact</a>
+            <a href="connexion.php">Connexion</a>
+        </nav>
+
     </div>
+
 </header>
 
     <main class="contenu-principal">
