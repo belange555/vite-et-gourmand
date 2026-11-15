@@ -69,14 +69,20 @@ exit;
 <body>
 
     <header class="site-header">
+
+       <div class="container"> 
+
       <img
     src="images/logo-vite-et-gourmand.png"
     alt="Vite & Gourmand - Traiteur"
     class="logo-site"
 >
+
+</div>
+
     </header>
 
-    <main class="contenu-principal">
+    <main class="contenu-principal page-connexion">
         <article class="carte-menu">
             <h2>Connexion</h2>
 

@@ -367,7 +367,8 @@ $nombreAvisEnAttente = count($avisEnAttente);
 <body>
 
 <header class="site-header entete-employe">
-
+    
+<div class="container">
    <img
     src="images/logo-vite-et-gourmand.png"
     alt="Vite & Gourmand - Traiteur"

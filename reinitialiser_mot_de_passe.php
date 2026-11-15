@@ -100,7 +100,9 @@ if (strlen($motDePasse) < 8 || strlen($motDePasse) > 72) {
 <body>
 
     <header class="site-header">
+
     <div class="container">
+
         <a href="index.php" aria-label="Retour à l'accueil">
             <img
                 src="images/logo-vite-et-gourmand.png"
@@ -111,7 +113,7 @@ if (strlen($motDePasse) < 8 || strlen($motDePasse) > 72) {
     </div>
 </header>
 
-    <main>
+    <main class="page-mot-de-passe">
 
         <section class="page-mot-de-passe">
 
